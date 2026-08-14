@@ -1,314 +1,380 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Inaya - মানুষের প্রয়োজন এক জায়গায়</title>
+<title>Inaya - মানুষের প্রয়োজন এক জায়গায়</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    body {
-      background: #f5f7fa;
-      color: #222;
-    }
+body{
+  background:#f5f7fa;
+  color:#222;
+}
 
-    header {
-      background: linear-gradient(135deg, #087f5b, #0ca678);
-      color: white;
-      padding: 25px 18px 35px;
-      text-align: center;
-    }
+header{
+  background:linear-gradient(135deg,#087f5b,#12b886);
+  color:white;
+  padding:25px 15px 35px;
+  text-align:center;
+}
 
-    .logo {
-      font-size: 38px;
-      font-weight: bold;
-    }
+.logo{
+  font-size:40px;
+  font-weight:bold;
+}
 
-    header p {
-      margin-top: 8px;
-      font-size: 16px;
-    }
+header p{
+  margin-top:6px;
+}
 
-    .search-box {
-      margin: 22px auto 0;
-      max-width: 650px;
-      display: flex;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+.search{
+  max-width:650px;
+  margin:20px auto 0;
+  display:flex;
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+}
 
-    .search-box input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 15px;
-      font-size: 16px;
-    }
+.search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:15px;
+  font-size:16px;
+}
 
-    .search-box button {
-      border: none;
-      background: #ff922b;
-      color: white;
-      padding: 0 20px;
-      font-size: 20px;
-    }
+.search button{
+  border:0;
+  background:#ff922b;
+  color:white;
+  padding:0 20px;
+  font-size:20px;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 25px 15px;
-    }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px 15px;
+}
 
-    .welcome {
-      background: white;
-      border-radius: 16px;
-      padding: 25px;
-      margin-bottom: 25px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-    }
+.welcome{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
 
-    .welcome h2 {
-      color: #087f5b;
-      margin-bottom: 10px;
-    }
+.welcome h2{
+  color:#087f5b;
+  margin-bottom:10px;
+}
 
-    .section-title {
-      margin: 25px 0 15px;
-      font-size: 22px;
-    }
+.title{
+  margin:25px 0 15px;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
 
-    .card {
-      background: white;
-      padding: 22px 10px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-      transition: 0.2s;
-    }
+.card{
+  background:white;
+  padding:22px 8px;
+  text-align:center;
+  border-radius:15px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-    }
+.icon{
+  font-size:34px;
+  margin-bottom:8px;
+}
 
-    .icon {
-      font-size: 34px;
-      margin-bottom: 9px;
-    }
+.card h3{
+  font-size:16px;
+}
 
-    .card h3 {
-      font-size: 16px;
-    }
+.card p{
+  font-size:12px;
+  color:#777;
+  margin-top:5px;
+}
 
-    .card p {
-      font-size: 12px;
-      color: #777;
-      margin-top: 5px;
-    }
+.contact{
+  margin-top:25px;
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
 
-    .feature {
-      margin-top: 25px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
+.contact h2{
+  color:#087f5b;
+  margin-bottom:15px;
+}
 
-    .feature-card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-    }
+.phone{
+  display:block;
+  text-decoration:none;
+  background:#087f5b;
+  color:white;
+  padding:13px;
+  margin:10px auto;
+  max-width:300px;
+  border-radius:10px;
+  font-size:17px;
+}
 
-    .feature-card h3 {
-      margin-bottom: 8px;
-      color: #087f5b;
-    }
+.features{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:15px;
+  margin-top:20px;
+}
 
-    .bottom {
-      margin-top: 30px;
-      background: #087f5b;
-      color: white;
-      padding: 25px 15px;
-      text-align: center;
-      border-radius: 15px;
-    }
+.feature{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
 
-    footer {
-      margin-top: 30px;
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 13px;
-    }
+.feature h3{
+  color:#087f5b;
+  margin-bottom:8px;
+}
 
-    @media (min-width: 700px) {
-      .services {
-        grid-template-columns: repeat(4, 1fr);
-      }
+.join{
+  margin-top:25px;
+  background:#087f5b;
+  color:white;
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+}
 
-      .feature {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
+.join button{
+  margin-top:15px;
+  padding:12px 22px;
+  border:0;
+  border-radius:10px;
+  background:#ff922b;
+  color:white;
+  font-size:16px;
+}
+
+footer{
+  margin-top:30px;
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:25px 10px;
+  font-size:13px;
+}
+
+@media(min-width:700px){
+  .services{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .features{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
+<header>
 
-    <div class="logo">Inaya</div>
+<div class="logo">Inaya</div>
 
-    <p>মানুষের প্রয়োজন এক জায়গায়</p>
+<p>মানুষের প্রয়োজন এক জায়গায়</p>
 
-    <div class="search-box">
-      <input
-        type="text"
-        placeholder="আপনার প্রয়োজন লিখে খুঁজুন..."
-      >
-      <button>🔎</button>
-    </div>
+<div class="search">
+<input type="text" placeholder="আপনার প্রয়োজন লিখে খুঁজুন...">
+<button>🔎</button>
+</div>
 
-  </header>
+</header>
 
 
-  <main class="container">
+<main class="container">
 
-    <div class="welcome">
+<div class="welcome">
 
-      <h2>Inaya-তে স্বাগতম 👋</h2>
+<h2>Inaya-তে স্বাগতম 👋</h2>
 
-      <p>
-        আপনার দৈনন্দিন প্রয়োজনীয় সেবা, তথ্য,
-        ব্যবসা ও সুযোগ এক জায়গায় খুঁজে নিন।
-      </p>
+<p>
+দৈনন্দিন প্রয়োজনীয় সেবা, তথ্য, ব্যবসা ও সুযোগ
+এক জায়গায় খুঁজে নিন।
+</p>
 
-    </div>
-
-
-    <h2 class="section-title">জনপ্রিয় সেবা</h2>
+</div>
 
 
-    <div class="services">
+<h2 class="title">জনপ্রিয় সেবা</h2>
 
-      <div class="card">
-        <div class="icon">🏪</div>
-        <h3>দোকান ও ব্যবসা</h3>
-        <p>কাছের ব্যবসা খুঁজুন</p>
-      </div>
+<div class="services">
 
-      <div class="card">
-        <div class="icon">🔧</div>
-        <h3>কারিগরি সেবা</h3>
-        <p>মিস্ত্রি ও সার্ভিস</p>
-      </div>
+<div class="card">
+<div class="icon">🏪</div>
+<h3>দোকান ও ব্যবসা</h3>
+<p>স্থানীয় ব্যবসা</p>
+</div>
 
-      <div class="card">
-        <div class="icon">💼</div>
-        <h3>চাকরি</h3>
-        <p>চাকরির সুযোগ খুঁজুন</p>
-      </div>
+<div class="card">
+<div class="icon">🔧</div>
+<h3>কারিগরি সেবা</h3>
+<p>মিস্ত্রি ও সার্ভিস</p>
+</div>
 
-      <div class="card">
-        <div class="icon">🛒</div>
-        <h3>পণ্য ও সেবা</h3>
-        <p>প্রয়োজনীয় পণ্য</p>
-      </div>
+<div class="card">
+<div class="icon">💼</div>
+<h3>চাকরি</h3>
+<p>চাকরির সুযোগ</p>
+</div>
 
-      <div class="card">
-        <div class="icon">📍</div>
-        <h3>কাছাকাছি</h3>
-        <p>আপনার আশেপাশে</p>
-      </div>
+<div class="card">
+<div class="icon">🛒</div>
+<h3>পণ্য ও সেবা</h3>
+<p>প্রয়োজনীয় পণ্য</p>
+</div>
 
-      <div class="card">
-        <div class="icon">📢</div>
-        <h3>নোটিশ ও খবর</h3>
-        <p>গুরুত্বপূর্ণ তথ্য</p>
-      </div>
+<div class="card">
+<div class="icon">📍</div>
+<h3>কাছাকাছি সেবা</h3>
+<p>আপনার আশেপাশে</p>
+</div>
 
-      <div class="card">
-        <div class="icon">📚</div>
-        <h3>শিক্ষা</h3>
-        <p>শিক্ষামূলক তথ্য</p>
-      </div>
+<div class="card">
+<div class="icon">📢</div>
+<h3>নোটিশ ও খবর</h3>
+<p>গুরুত্বপূর্ণ তথ্য</p>
+</div>
 
-      <div class="card">
-        <div class="icon">🆘</div>
-        <h3>জরুরি সেবা</h3>
-        <p>জরুরি প্রয়োজন</p>
-      </div>
+<div class="card">
+<div class="icon">📚</div>
+<h3>শিক্ষা</h3>
+<p>শিক্ষামূলক তথ্য</p>
+</div>
 
-    </div>
+<div class="card">
+<div class="icon">🆘</div>
+<h3>জরুরি সেবা</h3>
+<p>জরুরি প্রয়োজন</p>
+</div>
 
+<div class="card">
+<div class="icon">⭐</div>
+<h3>রিভিউ</h3>
+<p>সেবা যাচাই</p>
+</div>
 
-    <h2 class="section-title">Inaya-এর বিশেষ সুবিধা</h2>
+<div class="card">
+<div class="icon">🔔</div>
+<h3>নোটিফিকেশন</h3>
+<p>নতুন আপডেট</p>
+</div>
 
+<div class="card">
+<div class="icon">👤</div>
+<h3>আমার প্রোফাইল</h3>
+<p>ব্যক্তিগত অ্যাকাউন্ট</p>
+</div>
 
-    <div class="feature">
+<div class="card">
+<div class="icon">🌐</div>
+<h3>বাংলা / English</h3>
+<p>ভাষা পরিবর্তন</p>
+</div>
 
-      <div class="feature-card">
-        <h3>🔎 সহজে খুঁজুন</h3>
-        <p>
-          আপনার প্রয়োজনীয় সেবা ও তথ্য সহজে খুঁজে পাওয়ার ব্যবস্থা।
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h3>📍 স্থানীয় সেবা</h3>
-        <p>
-          ভবিষ্যতে আপনার কাছাকাছি দোকান ও সার্ভিস খুঁজে পাওয়া যাবে।
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <h3>⭐ বিশ্বাসযোগ্যতা</h3>
-        <p>
-          ভবিষ্যতে রিভিউ ও রেটিংয়ের মাধ্যমে ভালো সেবা বেছে নিতে পারবেন।
-        </p>
-      </div>
-
-    </div>
+</div>
 
 
-    <div class="bottom">
+<div class="contact">
 
-      <h2>Inaya-এর সাথে যুক্ত হন</h2>
+<h2>📞 Inaya যোগাযোগ</h2>
 
-      <p style="margin-top:10px;">
-        আপনার ব্যবসা বা সেবা ভবিষ্যতে Inaya-তে যুক্ত করার সুযোগ থাকবে।
-      </p>
+<p>প্রয়োজনে আমাদের সাথে যোগাযোগ করুন</p>
 
-    </div>
+<a class="phone" href="tel:01912028301">
+📞 01912028301
+</a>
 
-  </main>
+<a class="phone" href="tel:01590067686">
+📞 01590067686
+</a>
+
+</div>
 
 
-  <footer>
+<h2 class="title">Inaya-এর বিশেষ সুবিধা</h2>
 
-    <p>© 2026 Inaya</p>
+<div class="features">
 
-    <p style="margin-top:7px;">
-      মানুষের প্রয়োজন এক জায়গায়
-    </p>
+<div class="feature">
+<h3>🔎 সহজে খুঁজুন</h3>
+<p>
+প্রয়োজনীয় সেবা ও তথ্য সহজে খুঁজে পাওয়ার ব্যবস্থা।
+</p>
+</div>
 
-  </footer>
+<div class="feature">
+<h3>📍 স্থানীয় সেবা</h3>
+<p>
+ভবিষ্যতে আপনার কাছাকাছি দোকান ও সার্ভিস খুঁজে পাওয়া যাবে।
+</p>
+</div>
+
+<div class="feature">
+<h3>⭐ রেটিং ও রিভিউ</h3>
+<p>
+ভালো সেবা বেছে নিতে ব্যবহারকারীর মতামত দেখা যাবে।
+</p>
+</div>
+
+</div>
+
+
+<div class="join">
+
+<h2>🏪 আপনার ব্যবসা Inaya-তে যুক্ত করুন</h2>
+
+<p style="margin-top:10px;">
+ভবিষ্যতে ব্যবসা ও সেবা Inaya-তে যুক্ত করার সুযোগ থাকবে।
+</p>
+
+<button>ব্যবসা যুক্ত করুন</button>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>© 2026 Inaya</p>
+
+<p style="margin-top:7px;">
+মানুষের প্রয়োজন এক জায়গায়
+</p>
+
+</footer>
 
 </body>
-  </html>
+</html>
