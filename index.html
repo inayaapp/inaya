@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Inaya - মানুষের প্রয়োজন এক জায়গায়</title>
 
 <style>
@@ -68,15 +67,24 @@ header{
   padding:20px 15px;
 }
 
-.welcome{
+.welcome,
+.contact,
+.business-form,
+.account-box{
   background:white;
   padding:25px;
   border-radius:16px;
-  text-align:center;
   box-shadow:0 3px 12px rgba(0,0,0,.07);
 }
 
-.welcome h2{
+.welcome{
+  text-align:center;
+}
+
+.welcome h2,
+.contact h2,
+.business-form h2,
+.account-box h2{
   color:#087f5b;
   margin-bottom:10px;
 }
@@ -132,16 +140,7 @@ header{
 
 .contact{
   margin-top:28px;
-  background:white;
-  padding:25px;
-  border-radius:16px;
   text-align:center;
-  box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.contact h2{
-  color:#087f5b;
-  margin-bottom:8px;
 }
 
 .phone{
@@ -174,19 +173,10 @@ header{
   margin-bottom:8px;
 }
 
-/* BUSINESS FORM */
+/* BUSINESS */
 
 .business-form{
-  background:white;
   margin-top:28px;
-  padding:25px;
-  border-radius:16px;
-  box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.business-form h2{
-  color:#087f5b;
-  text-align:center;
 }
 
 .business-form p{
@@ -196,7 +186,9 @@ header{
 
 .business-form input,
 .business-form select,
-.business-form textarea{
+.business-form textarea,
+.account-box input,
+.account-box select{
   width:100%;
   padding:13px;
   margin:7px 0;
@@ -208,10 +200,9 @@ header{
 
 .business-form textarea{
   height:100px;
-  resize:vertical;
 }
 
-.business-submit{
+.main-button{
   width:100%;
   padding:14px;
   margin-top:10px;
@@ -223,14 +214,6 @@ header{
   cursor:pointer;
 }
 
-.business-submit:hover{
-  background:#066b4c;
-}
-
-.business-list{
-  margin-top:25px;
-}
-
 .business-item{
   background:#f8fffc;
   border:1px solid #d8eee5;
@@ -239,20 +222,100 @@ header{
   border-radius:12px;
 }
 
-.business-item h3{
-  color:#087f5b;
-  margin-bottom:8px;
+/* ACCOUNT */
+
+.account-box{
+  margin-top:28px;
 }
 
-.business-item p{
-  text-align:left;
-  margin:5px 0;
+.account-box > p{
+  text-align:center;
+  color:#666;
+  margin-bottom:15px;
 }
 
-.business-item a{
+.money-summary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:15px 0;
+}
+
+.money-card{
+  padding:15px 8px;
+  border-radius:12px;
+  text-align:center;
+  background:#f4f7f6;
+}
+
+.money-card h3{
+  font-size:14px;
+  color:#666;
+}
+
+.money-card strong{
+  display:block;
+  margin-top:7px;
+  font-size:19px;
   color:#087f5b;
-  font-weight:bold;
-  text-decoration:none;
+}
+
+.account-tabs{
+  display:flex;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.account-tabs button{
+  flex:1;
+  padding:12px;
+  border:0;
+  border-radius:9px;
+  cursor:pointer;
+  color:white;
+  font-size:15px;
+}
+
+.income-btn{
+  background:#087f5b;
+}
+
+.expense-btn{
+  background:#e03131;
+}
+
+.transaction{
+  background:#f8f8f8;
+  border-left:5px solid #087f5b;
+  padding:14px;
+  margin-top:10px;
+  border-radius:8px;
+}
+
+.transaction.expense{
+  border-left-color:#e03131;
+}
+
+.transaction-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.delete-btn{
+  background:#e03131;
+  color:white;
+  border:0;
+  padding:6px 10px;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+.month-box{
+  margin-top:15px;
+  padding:12px;
+  background:#f4f7f6;
+  border-radius:10px;
 }
 
 footer{
@@ -272,6 +335,13 @@ footer{
 
   .features{
     grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:500px){
+
+  .money-summary{
+    grid-template-columns:1fr;
   }
 
 }
@@ -304,7 +374,6 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 
 
 <main class="container">
-
 
 <div class="welcome">
 
@@ -395,6 +464,18 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 <p>ভাষা পরিবর্তন</p>
 </div>
 
+<!-- নতুন ১৩তম ফিচার -->
+
+<div class="card" onclick="document.getElementById('accountBox').scrollIntoView({behavior:'smooth'})">
+
+<div class="icon">💰</div>
+
+<h3>আমার হিসাব</h3>
+
+<p>আয় ও ব্যয়ের হিসাব</p>
+
+</div>
+
 </div>
 
 
@@ -402,6 +483,8 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 কোনো সেবা বা ব্যবসা পাওয়া যায়নি।
 </div>
 
+
+<!-- CONTACT -->
 
 <div class="contact">
 
@@ -453,39 +536,21 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 
 <section class="business-form">
 
-<h2>
-🏪 Inaya-তে আপনার ব্যবসা যুক্ত করুন
-</h2>
+<h2>🏪 Inaya-তে আপনার ব্যবসা যুক্ত করুন</h2>
 
 <p>
 আপনার ব্যবসার তথ্য দিন। ভবিষ্যতে মানুষ Inaya থেকে আপনার ব্যবসা খুঁজে পাবে।
 </p>
 
+<input id="businessName" type="text" placeholder="ব্যবসার নাম">
 
-<input
-id="businessName"
-type="text"
-placeholder="ব্যবসার নাম"
->
+<input id="ownerName" type="text" placeholder="মালিকের নাম">
 
-<input
-id="ownerName"
-type="text"
-placeholder="মালিকের নাম"
->
-
-<input
-id="businessPhone"
-type="tel"
-placeholder="মোবাইল নম্বর"
->
+<input id="businessPhone" type="tel" placeholder="মোবাইল নম্বর">
 
 <select id="businessType">
 
-<option value="">
-ব্যবসার ধরন নির্বাচন করুন
-</option>
-
+<option value="">ব্যবসার ধরন নির্বাচন করুন</option>
 <option>দোকান</option>
 <option>রেস্টুরেন্ট</option>
 <option>কারিগরি সেবা</option>
@@ -495,38 +560,113 @@ placeholder="মোবাইল নম্বর"
 
 </select>
 
-
-<input
-id="businessAddress"
-type="text"
-placeholder="ব্যবসার ঠিকানা"
->
-
+<input id="businessAddress" type="text" placeholder="ব্যবসার ঠিকানা">
 
 <textarea
 id="businessDescription"
 placeholder="আপনার ব্যবসা/সেবার বিবরণ"
 ></textarea>
 
-
-<button
-class="business-submit"
-onclick="submitBusiness()"
->
+<button class="main-button" onclick="submitBusiness()">
 ✅ ব্যবসা জমা দিন
 </button>
 
-
-<div class="business-list" id="businessList">
-
-<h3 style="color:#087f5b;text-align:center;">
-📋 যুক্ত হওয়া ব্যবসা
-</h3>
-
-</div>
+<div id="businessList"></div>
 
 </section>
 
+
+<!-- INCOME EXPENSE -->
+
+<section class="account-box" id="accountBox">
+
+<h2>💰 আমার হিসাব</h2>
+
+<p>
+আপনার দৈনিক ও মাসিক আয়–ব্যয়ের হিসাব রাখুন।
+</p>
+
+
+<div class="money-summary">
+
+<div class="money-card">
+<h3>মোট আয়</h3>
+<strong id="totalIncome">৳0</strong>
+</div>
+
+<div class="money-card">
+<h3>মোট ব্যয়</h3>
+<strong id="totalExpense">৳0</strong>
+</div>
+
+<div class="money-card">
+<h3>অবশিষ্ট</h3>
+<strong id="balance">৳0</strong>
+</div>
+
+</div>
+
+
+<div class="account-tabs">
+
+<button class="income-btn" onclick="setTransactionType('income')">
+➕ আয়
+</button>
+
+<button class="expense-btn" onclick="setTransactionType('expense')">
+➖ ব্যয়
+</button>
+
+</div>
+
+
+<input
+id="moneyAmount"
+type="number"
+min="0"
+placeholder="টাকার পরিমাণ"
+>
+
+<input
+id="moneyNote"
+type="text"
+placeholder="কিসের আয়/ব্যয়? যেমন: বেতন, বাজার"
+>
+
+<input
+id="moneyDate"
+type="date"
+>
+
+
+<button
+class="main-button"
+onclick="addTransaction()"
+>
+💾 হিসাব সংরক্ষণ করুন
+</button>
+
+
+<div class="month-box">
+
+<label><b>📆 মাস অনুযায়ী হিসাব দেখুন</b></label>
+
+<input
+id="monthFilter"
+type="month"
+onchange="showTransactions()"
+>
+
+</div>
+
+
+<h3 style="color:#087f5b;margin-top:20px;">
+📋 লেনদেনের তালিকা
+</h3>
+
+<div id="transactionList"></div>
+
+</section>
 
 </main>
 
@@ -548,237 +688,480 @@ onclick="submitBusiness()"
 
 function searchServices(){
 
-  const searchText =
-  document
-  .getElementById("searchInput")
-  .value
-  .toLowerCase()
-  .trim();
+const text =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
 
-  const cards =
-  document.querySelectorAll(".card");
+const cards =
+document.querySelectorAll(".card");
 
-  const businesses =
-  document.querySelectorAll(".business-item");
+const businesses =
+document.querySelectorAll(".business-item");
 
-  const noResult =
-  document.getElementById("noResult");
+const noResult =
+document.getElementById("noResult");
 
-  let found = false;
+let found=false;
 
+cards.forEach(function(card){
 
-  cards.forEach(function(card){
+const cardText =
+card.innerText.toLowerCase();
 
-    const text =
-    card.innerText.toLowerCase();
+if(text==="" || cardText.includes(text)){
 
-    if(
-      searchText === "" ||
-      text.includes(searchText)
-    ){
+card.style.display="block";
+found=true;
 
-      card.style.display = "block";
-      found = true;
+}else{
 
-    }else{
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-
-  businesses.forEach(function(business){
-
-    const text =
-    business.innerText.toLowerCase();
-
-    if(
-      searchText === "" ||
-      text.includes(searchText)
-    ){
-
-      business.style.display = "block";
-      found = true;
-
-    }else{
-
-      business.style.display = "none";
-
-    }
-
-  });
-
-
-  if(searchText !== "" && !found){
-
-    noResult.style.display = "block";
-
-  }else{
-
-    noResult.style.display = "none";
-
-  }
+card.style.display="none";
 
 }
 
+});
 
-/* ENTER BUTTON */
+
+businesses.forEach(function(item){
+
+const itemText =
+item.innerText.toLowerCase();
+
+if(text==="" || itemText.includes(text)){
+
+item.style.display="block";
+found=true;
+
+}else{
+
+item.style.display="none";
+
+}
+
+});
+
+
+if(text!=="" && !found){
+
+noResult.style.display="block";
+
+}else{
+
+noResult.style.display="none";
+
+}
+
+}
+
 
 document
 .getElementById("searchInput")
 .addEventListener("keyup",function(event){
 
-  if(event.key === "Enter"){
+if(event.key==="Enter"){
 
-    searchServices();
+searchServices();
 
-  }
+}
 
 });
 
 
-/* BUSINESS REGISTRATION */
+/* BUSINESS */
 
 function submitBusiness(){
 
-  const name =
-  document.getElementById("businessName").value.trim();
+const name=
+document.getElementById("businessName").value.trim();
 
-  const owner =
-  document.getElementById("ownerName").value.trim();
+const owner=
+document.getElementById("ownerName").value.trim();
 
-  const phone =
-  document.getElementById("businessPhone").value.trim();
+const phone=
+document.getElementById("businessPhone").value.trim();
 
-  const type =
-  document.getElementById("businessType").value;
+const type=
+document.getElementById("businessType").value;
 
-  const address =
-  document.getElementById("businessAddress").value.trim();
+const address=
+document.getElementById("businessAddress").value.trim();
 
-  const description =
-  document.getElementById("businessDescription").value.trim();
-
-
-  if(
-    !name ||
-    !owner ||
-    !phone ||
-    !type ||
-    !address
-  ){
-
-    alert(
-      "দয়া করে প্রয়োজনীয় তথ্যগুলো পূরণ করুন।"
-    );
-
-    return;
-
-  }
+const description=
+document.getElementById("businessDescription").value.trim();
 
 
-  const business = {
+if(!name || !owner || !phone || !type || !address){
 
-    name:name,
-    owner:owner,
-    phone:phone,
-    type:type,
-    address:address,
-    description:description
+alert("দয়া করে প্রয়োজনীয় তথ্যগুলো পূরণ করুন।");
 
-  };
-
-
-  let businesses =
-  JSON.parse(
-    localStorage.getItem("inayaBusinesses")
-  ) || [];
-
-
-  businesses.push(business);
-
-
-  localStorage.setItem(
-    "inayaBusinesses",
-    JSON.stringify(businesses)
-  );
-
-
-  document.getElementById("businessName").value="";
-  document.getElementById("ownerName").value="";
-  document.getElementById("businessPhone").value="";
-  document.getElementById("businessType").value="";
-  document.getElementById("businessAddress").value="";
-  document.getElementById("businessDescription").value="";
-
-
-  alert(
-    "✅ ধন্যবাদ! আপনার ব্যবসা Inaya-তে যুক্ত হয়েছে।"
-  );
-
-
-  showBusinesses();
+return;
 
 }
 
 
-/* SHOW BUSINESSES */
+let businesses=
+JSON.parse(localStorage.getItem("inayaBusinesses")) || [];
+
+
+businesses.push({
+
+name:name,
+owner:owner,
+phone:phone,
+type:type,
+address:address,
+description:description
+
+});
+
+
+localStorage.setItem(
+"inayaBusinesses",
+JSON.stringify(businesses)
+);
+
+
+document.getElementById("businessName").value="";
+document.getElementById("ownerName").value="";
+document.getElementById("businessPhone").value="";
+document.getElementById("businessType").value="";
+document.getElementById("businessAddress").value="";
+document.getElementById("businessDescription").value="";
+
+
+alert("✅ আপনার ব্যবসা Inaya-তে যুক্ত হয়েছে।");
+
+showBusinesses();
+
+}
+
 
 function showBusinesses(){
 
-  const list =
-  document.getElementById("businessList");
+const list=
+document.getElementById("businessList");
 
-  let businesses =
-  JSON.parse(
-    localStorage.getItem("inayaBusinesses")
-  ) || [];
+let businesses=
+JSON.parse(localStorage.getItem("inayaBusinesses")) || [];
 
 
-  list.innerHTML =
-  '<h3 style="color:#087f5b;text-align:center;">📋 যুক্ত হওয়া ব্যবসা</h3>';
+list.innerHTML="";
 
 
-  businesses.forEach(function(business){
+businesses.forEach(function(business){
 
-    const item =
-    document.createElement("div");
+const item=
+document.createElement("div");
 
-    item.className="business-item";
+item.className="business-item";
 
-    item.innerHTML = `
+item.innerHTML=`
 
-      <h3>🏪 ${business.name}</h3>
+<h3>🏪 ${business.name}</h3>
 
-      <p>👤 মালিক: ${business.owner}</p>
+<p>👤 মালিক: ${business.owner}</p>
 
-      <p>📞 মোবাইল: 
-      <a href="tel:${business.phone}">
-      ${business.phone}
-      </a>
-      </p>
+<p>📞 মোবাইল:
+<a href="tel:${business.phone}">
+${business.phone}
+</a>
+</p>
 
-      <p>🏷️ ধরন: ${business.type}</p>
+<p>🏷️ ধরন: ${business.type}</p>
 
-      <p>📍 ঠিকানা: ${business.address}</p>
+<p>📍 ঠিকানা: ${business.address}</p>
 
-      <p>📝 ${business.description || "কোনো বিবরণ দেওয়া হয়নি।"}</p>
+<p>📝 ${business.description || "বিবরণ দেওয়া হয়নি।"}</p>
 
-    `;
+`;
 
+list.appendChild(item);
 
-    list.appendChild(item);
-
-  });
+});
 
 }
 
 
-/* LOAD SAVED BUSINESSES */
+/* ACCOUNT */
+
+let transactionType="income";
+
+
+function setTransactionType(type){
+
+transactionType=type;
+
+if(type==="income"){
+
+alert("➕ এখন আয় যোগ করা হচ্ছে।");
+
+}else{
+
+alert("➖ এখন ব্যয় যোগ করা হচ্ছে।");
+
+}
+
+}
+
+
+function addTransaction(){
+
+const amount=
+Number(document.getElementById("moneyAmount").value);
+
+const note=
+document.getElementById("moneyNote").value.trim();
+
+const date=
+document.getElementById("moneyDate").value;
+
+
+if(!amount || amount<=0){
+
+alert("দয়া করে সঠিক টাকার পরিমাণ দিন।");
+
+return;
+
+}
+
+
+if(!note){
+
+alert("আয়/ব্যয়ের কারণ লিখুন।");
+
+return;
+
+}
+
+
+if(!date){
+
+alert("তারিখ নির্বাচন করুন।");
+
+return;
+
+}
+
+
+let transactions=
+JSON.parse(localStorage.getItem("inayaTransactions")) || [];
+
+
+transactions.push({
+
+id:Date.now(),
+
+type:transactionType,
+
+amount:amount,
+
+note:note,
+
+date:date
+
+});
+
+
+localStorage.setItem(
+"inayaTransactions",
+JSON.stringify(transactions)
+);
+
+
+document.getElementById("moneyAmount").value="";
+document.getElementById("moneyNote").value="";
+
+
+alert("✅ হিসাব সংরক্ষণ হয়েছে।");
+
+showTransactions();
+
+}
+
+
+function deleteTransaction(id){
+
+if(!confirm("এই হিসাবটি মুছে ফেলবেন?")){
+
+return;
+
+}
+
+
+let transactions=
+JSON.parse(localStorage.getItem("inayaTransactions")) || [];
+
+
+transactions=
+transactions.filter(function(item){
+
+return item.id!==id;
+
+});
+
+
+localStorage.setItem(
+"inayaTransactions",
+JSON.stringify(transactions)
+);
+
+
+showTransactions();
+
+}
+
+
+function showTransactions(){
+
+let transactions=
+JSON.parse(localStorage.getItem("inayaTransactions")) || [];
+
+
+const filter=
+document.getElementById("monthFilter").value;
+
+
+const list=
+document.getElementById("transactionList");
+
+
+let income=0;
+let expense=0;
+
+
+let filtered=
+transactions.filter(function(item){
+
+if(!filter){
+
+return true;
+
+}
+
+return item.date.substring(0,7)===filter;
+
+});
+
+
+transactions.forEach(function(item){
+
+if(item.type==="income"){
+
+income+=Number(item.amount);
+
+}else{
+
+expense+=Number(item.amount);
+
+}
+
+});
+
+
+document.getElementById("totalIncome").innerText=
+"৳"+income.toLocaleString("bn-BD");
+
+document.getElementById("totalExpense").innerText=
+"৳"+expense.toLocaleString("bn-BD");
+
+document.getElementById("balance").innerText=
+"৳"+(income-expense).toLocaleString("bn-BD");
+
+
+list.innerHTML="";
+
+
+if(filtered.length===0){
+
+list.innerHTML=
+'<p style="text-align:center;color:#777;margin-top:15px;">কোনো হিসাব পাওয়া যায়নি।</p>';
+
+return;
+
+}
+
+
+filtered
+.slice()
+.reverse()
+.forEach(function(item){
+
+const div=
+document.createElement("div");
+
+div.className=
+"transaction "+
+(item.type==="expense" ? "expense":"");
+
+
+const title=
+item.type==="income"
+? "➕ আয়"
+: "➖ ব্যয়";
+
+
+div.innerHTML=`
+
+<div class="transaction-top">
+
+<div>
+
+<b>${title}</b>
+
+<br>
+
+<span>${item.note}</span>
+
+<br>
+
+<small>📅 ${item.date}</small>
+
+</div>
+
+<div style="text-align:right">
+
+<b style="font-size:18px;">
+৳${Number(item.amount).toLocaleString("bn-BD")}
+</b>
+
+<br>
+
+<button
+class="delete-btn"
+onclick="deleteTransaction(${item.id})"
+>
+🗑️
+</button>
+
+</div>
+
+</div>
+
+`;
+
+
+list.appendChild(div);
+
+});
+
+}
+
+
+/* LOAD */
 
 showBusinesses();
+
+
+const today=
+new Date().toISOString().split("T")[0];
+
+document.getElementById("moneyDate").value=today;
+
+
+showTransactions();
 
 </script>
 
