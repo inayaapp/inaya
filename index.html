@@ -1,12 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Inaya</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f5f8f7;
+  color:#222;
+}
+
+header{
+  background:linear-gradient(135deg,#087f5b,#12a879);
+  color:white;
+  text-align:center;
+  padding:55px 20px;
+}
+
+header h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+header p{
+  font-size:18px;
+}
+
+nav{
+  background:white;
+  padding:16px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+nav a{
+  text-decoration:none;
+  color:#087f5b;
+  font-weight:bold;
+  margin:0 10px;
+}
+
+.hero{
+  text-align:center;
+  padding:70px 20px;
+}
+
+.hero h2{
+  font-size:34px;
+  color:#087f5b;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.8;
+  font-size:17px;
+}
+
+.section{
+  max-width:900px;
+  margin:25px auto;
+  padding:35px 25px;
+  background:white;
+  border-radius:18px;
+  box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.section h2{
+  color:#087f5b;
+  margin-bottom:18px;
+  font-size:28px;
+}
+
+.section p{
+  line-height:1.8;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#eef8f4;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.card h3{
+  color:#087f5b;
+  margin-bottom:10px;
+}
+
+.contact{
+  text-align:center;
+}
+
+.contact p{
+  margin:10px 0;
+  font-size:17px;
+}
+
+footer{
+  background:#087f5b;
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+  margin-top:50px;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:40px;
+  }
+
+  .hero h2{
+    font-size:28px;
+  }
+
+  nav a{
+    margin:5px;
+    font-size:14px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<h1>Welcome to Inaya</h1>
-<p>Inaya App</p>
+<header>
+  <h1>Inaya</h1>
+  <p>Simple • Smart • Useful</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#features">Features</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Welcome to Inaya</h2>
+  <p>
+    Inaya একটি সহজ, সুন্দর ও ব্যবহারবান্ধব ডিজিটাল প্ল্যাটফর্ম।
+    মানুষের প্রয়োজনীয় বিভিন্ন সুবিধা সহজভাবে এক জায়গায় নিয়ে আসাই
+    Inaya-এর লক্ষ্য।
+  </p>
+</section>
+
+<section class="section" id="about">
+  <h2>About Inaya</h2>
+  <p>
+    Inaya একটি নতুন ডিজিটাল উদ্যোগ। আমাদের লক্ষ্য হলো
+    মানুষের দৈনন্দিন প্রয়োজনের জন্য সহজ ও কার্যকর ডিজিটাল
+    সুবিধা তৈরি করা। সময়ের সাথে Inaya-তে আরও নতুন নতুন
+    ফিচার ও সেবা যুক্ত করা হবে।
+  </p>
+</section>
+
+<section class="section" id="features">
+  <h2>Inaya Features</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>সহজ ব্যবহার</h3>
+      <p>
+        সহজ ও পরিষ্কার ডিজাইনের মাধ্যমে সবাই যেন
+        স্বাচ্ছন্দ্যে ব্যবহার করতে পারে।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>স্মার্ট সেবা</h3>
+      <p>
+        প্রয়োজনীয় ডিজিটাল সুবিধাগুলো এক জায়গায়
+        নিয়ে আসার লক্ষ্য।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>নিরাপত্তা</h3>
+      <p>
+        ব্যবহারকারীর তথ্য ও নিরাপত্তাকে গুরুত্ব দেওয়া হবে।
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <h2>Contact Inaya</h2>
+
+  <p>📞 Contact Number: Coming Soon</p>
+
+  <p>📧 Email: Coming Soon</p>
+
+  <p>
+    আপনার যেকোনো প্রশ্ন বা মতামতের জন্য
+    Inaya-এর সাথে যোগাযোগ করুন।
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Inaya. All Rights Reserved.</p>
+</footer>
 
 </body>
-</html>
+  </html>
