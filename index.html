@@ -15,20 +15,21 @@
 }
 
 body{
-  background:#f5f8f7;
+  background:#f4f8f6;
   color:#222;
+  line-height:1.7;
 }
 
 header{
-  background:linear-gradient(135deg,#087f5b,#12a879);
+  background:linear-gradient(135deg,#087f5b,#13a879);
   color:white;
   text-align:center;
   padding:55px 20px;
 }
 
 header h1{
-  font-size:48px;
-  margin-bottom:10px;
+  font-size:50px;
+  margin-bottom:8px;
 }
 
 header p{
@@ -37,10 +38,11 @@ header p{
 
 nav{
   background:white;
-  padding:16px;
+  padding:15px;
   text-align:center;
   position:sticky;
   top:0;
+  z-index:10;
   box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
@@ -48,29 +50,27 @@ nav a{
   text-decoration:none;
   color:#087f5b;
   font-weight:bold;
-  margin:0 10px;
+  margin:0 9px;
 }
 
 .hero{
   text-align:center;
-  padding:70px 20px;
+  padding:65px 20px;
 }
 
 .hero h2{
-  font-size:34px;
   color:#087f5b;
+  font-size:34px;
   margin-bottom:15px;
 }
 
 .hero p{
-  max-width:700px;
+  max-width:720px;
   margin:auto;
-  line-height:1.8;
-  font-size:17px;
 }
 
 .section{
-  max-width:900px;
+  max-width:950px;
   margin:25px auto;
   padding:35px 25px;
   background:white;
@@ -81,16 +81,11 @@ nav a{
 .section h2{
   color:#087f5b;
   margin-bottom:18px;
-  font-size:28px;
-}
-
-.section p{
-  line-height:1.8;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
   gap:18px;
 }
 
@@ -103,7 +98,34 @@ nav a{
 
 .card h3{
   color:#087f5b;
-  margin-bottom:10px;
+  margin-bottom:8px;
+}
+
+.tools{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+
+.tool{
+  border:1px solid #dce9e4;
+  padding:22px;
+  border-radius:15px;
+}
+
+.tool h3{
+  color:#087f5b;
+  margin-bottom:8px;
+}
+
+.button{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 18px;
+  background:#087f5b;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
 }
 
 .contact{
@@ -111,8 +133,7 @@ nav a{
 }
 
 .contact p{
-  margin:10px 0;
-  font-size:17px;
+  margin:8px 0;
 }
 
 footer{
@@ -120,7 +141,7 @@ footer{
   color:white;
   text-align:center;
   padding:28px 15px;
-  margin-top:50px;
+  margin-top:45px;
 }
 
 @media(max-width:600px){
@@ -133,6 +154,7 @@ footer{
   }
 
   nav a{
+    display:inline-block;
     margin:5px;
     font-size:14px;
   }
@@ -144,18 +166,20 @@ footer{
 
 <header>
   <h1>Inaya</h1>
-  <p>Simple • Smart • Useful</p>
+  <p>Simple • Smart • Useful Digital Platform</p>
 </header>
 
 <nav>
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#features">Features</a>
+  <a href="#tools">Services</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero" id="home">
   <h2>Welcome to Inaya</h2>
+
   <p>
     Inaya একটি সহজ, সুন্দর ও ব্যবহারবান্ধব ডিজিটাল প্ল্যাটফর্ম।
     মানুষের প্রয়োজনীয় বিভিন্ন সুবিধা সহজভাবে এক জায়গায় নিয়ে আসাই
@@ -165,11 +189,11 @@ footer{
 
 <section class="section" id="about">
   <h2>About Inaya</h2>
+
   <p>
-    Inaya একটি নতুন ডিজিটাল উদ্যোগ। আমাদের লক্ষ্য হলো
-    মানুষের দৈনন্দিন প্রয়োজনের জন্য সহজ ও কার্যকর ডিজিটাল
-    সুবিধা তৈরি করা। সময়ের সাথে Inaya-তে আরও নতুন নতুন
-    ফিচার ও সেবা যুক্ত করা হবে।
+    Inaya একটি নতুন ডিজিটাল উদ্যোগ। আমাদের লক্ষ্য হলো মানুষের
+    দৈনন্দিন প্রয়োজনের জন্য সহজ ও কার্যকর ডিজিটাল সুবিধা তৈরি করা।
+    সময়ের সাথে Inaya-তে আরও নতুন নতুন ফিচার ও সেবা যুক্ত করা হবে।
   </p>
 </section>
 
@@ -201,25 +225,82 @@ footer{
       </p>
     </div>
 
+    <div class="card">
+      <h3>মোবাইল সুবিধা</h3>
+      <p>
+        মোবাইল ফোন থেকেও সহজে ব্যবহার করার জন্য তৈরি।
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <h2>Inaya Services</h2>
+
+  <div class="tools">
+
+    <div class="tool">
+      <h3>💰 আয়-ব্যয়ের হিসাব</h3>
+      <p>
+        দৈনিক আয় ও খরচের হিসাব রাখার সুবিধা
+        ভবিষ্যতে আরও উন্নত করা হবে।
+      </p>
+      <a class="button" href="#contact">Coming Soon</a>
+    </div>
+
+    <div class="tool">
+      <h3>📝 নোট</h3>
+      <p>
+        গুরুত্বপূর্ণ তথ্য ও ব্যক্তিগত নোট
+        সহজে রাখার সুবিধা।
+      </p>
+      <a class="button" href="#contact">Coming Soon</a>
+    </div>
+
+    <div class="tool">
+      <h3>📊 Dashboard</h3>
+      <p>
+        ভবিষ্যতে ব্যবহারকারীর প্রয়োজনীয় তথ্য
+        এক জায়গায় দেখানো হবে।
+      </p>
+      <a class="button" href="#contact">Coming Soon</a>
+    </div>
+
+    <div class="tool">
+      <h3>🔐 Account</h3>
+      <p>
+        ভবিষ্যতে Login ও ব্যক্তিগত Account
+        ব্যবস্থাও যুক্ত করা হবে।
+      </p>
+      <a class="button" href="#contact">Coming Soon</a>
+    </div>
+
   </div>
 </section>
 
 <section class="section contact" id="contact">
+
   <h2>Contact Inaya</h2>
 
-  <p>📞 Contact Number: Coming Soon</p>
-
-  <p>📧 Email: Coming Soon</p>
+  <p>📞 <strong>01912028301</strong></p>
+  <p>📞 <strong>01590067686</strong></p>
 
   <p>
-    আপনার যেকোনো প্রশ্ন বা মতামতের জন্য
-    Inaya-এর সাথে যোগাযোগ করুন।
+    Inaya সম্পর্কে জানতে বা যোগাযোগ করতে
+    উপরের নম্বরগুলো ব্যবহার করুন।
   </p>
+
+  <a class="button" href="tel:01912028301">
+    📞 Call Inaya
+  </a>
+
 </section>
 
 <footer>
   <p>© 2026 Inaya. All Rights Reserved.</p>
+  <p>Simple • Smart • Useful</p>
 </footer>
 
 </body>
-  </html>
+</html>
