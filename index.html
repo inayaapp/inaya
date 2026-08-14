@@ -120,6 +120,16 @@ header{
   margin-top:5px;
 }
 
+.no-result{
+  display:none;
+  background:white;
+  padding:20px;
+  margin-top:15px;
+  border-radius:12px;
+  text-align:center;
+  color:#777;
+}
+
 .contact{
   margin-top:28px;
   background:white;
@@ -146,10 +156,6 @@ header{
   font-size:17px;
 }
 
-.phone:hover{
-  background:#066b4c;
-}
-
 .features{
   display:grid;
   grid-template-columns:1fr;
@@ -168,24 +174,85 @@ header{
   margin-bottom:8px;
 }
 
-.business{
+/* BUSINESS FORM */
+
+.business-form{
+  background:white;
   margin-top:28px;
-  background:#087f5b;
-  color:white;
-  padding:28px 18px;
+  padding:25px;
   border-radius:16px;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.business-form h2{
+  color:#087f5b;
   text-align:center;
 }
 
-.business button{
-  margin-top:15px;
+.business-form p{
+  text-align:center;
+  margin:10px 0 20px;
+}
+
+.business-form input,
+.business-form select,
+.business-form textarea{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #ddd;
+  border-radius:9px;
+  font-size:15px;
+  outline:none;
+}
+
+.business-form textarea{
+  height:100px;
+  resize:vertical;
+}
+
+.business-submit{
+  width:100%;
+  padding:14px;
+  margin-top:10px;
   border:0;
-  padding:12px 22px;
   border-radius:10px;
-  background:#ff922b;
+  background:#087f5b;
   color:white;
-  font-size:16px;
+  font-size:17px;
   cursor:pointer;
+}
+
+.business-submit:hover{
+  background:#066b4c;
+}
+
+.business-list{
+  margin-top:25px;
+}
+
+.business-item{
+  background:#f8fffc;
+  border:1px solid #d8eee5;
+  padding:18px;
+  margin-top:12px;
+  border-radius:12px;
+}
+
+.business-item h3{
+  color:#087f5b;
+  margin-bottom:8px;
+}
+
+.business-item p{
+  text-align:left;
+  margin:5px 0;
+}
+
+.business-item a{
+  color:#087f5b;
+  font-weight:bold;
+  text-decoration:none;
 }
 
 footer{
@@ -195,16 +262,6 @@ footer{
   text-align:center;
   padding:25px 10px;
   font-size:13px;
-}
-
-.no-result{
-  display:none;
-  background:white;
-  padding:20px;
-  margin-top:15px;
-  border-radius:12px;
-  text-align:center;
-  color:#777;
 }
 
 @media(min-width:700px){
@@ -220,7 +277,6 @@ footer{
 }
 </style>
 </head>
-
 
 <body>
 
@@ -267,13 +323,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 
 <div class="services" id="serviceList">
 
-
 <div class="card">
 <div class="icon">🏪</div>
 <h3>দোকান ও ব্যবসা</h3>
 <p>স্থানীয় ব্যবসা খুঁজুন</p>
 </div>
-
 
 <div class="card">
 <div class="icon">🔧</div>
@@ -281,13 +335,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 <p>মিস্ত্রি ও সার্ভিস</p>
 </div>
 
-
 <div class="card">
 <div class="icon">💼</div>
 <h3>চাকরি</h3>
 <p>চাকরির সুযোগ</p>
 </div>
-
 
 <div class="card">
 <div class="icon">🛒</div>
@@ -295,13 +347,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 <p>প্রয়োজনীয় পণ্য</p>
 </div>
 
-
 <div class="card">
 <div class="icon">📍</div>
 <h3>কাছাকাছি সেবা</h3>
 <p>আপনার আশেপাশে</p>
 </div>
-
 
 <div class="card">
 <div class="icon">📢</div>
@@ -309,13 +359,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 <p>গুরুত্বপূর্ণ তথ্য</p>
 </div>
 
-
 <div class="card">
 <div class="icon">📚</div>
 <h3>শিক্ষা</h3>
 <p>শিক্ষামূলক তথ্য</p>
 </div>
-
 
 <div class="card">
 <div class="icon">🆘</div>
@@ -323,13 +371,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 <p>জরুরি প্রয়োজন</p>
 </div>
 
-
 <div class="card">
 <div class="icon">⭐</div>
 <h3>রিভিউ</h3>
 <p>সেবার মতামত</p>
 </div>
-
 
 <div class="card">
 <div class="icon">🔔</div>
@@ -337,13 +383,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 <p>নতুন আপডেট</p>
 </div>
 
-
 <div class="card">
 <div class="icon">👤</div>
 <h3>আমার প্রোফাইল</h3>
 <p>ব্যক্তিগত অ্যাকাউন্ট</p>
 </div>
-
 
 <div class="card">
 <div class="icon">🌐</div>
@@ -351,12 +395,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 <p>ভাষা পরিবর্তন</p>
 </div>
 
-
 </div>
 
 
 <div class="no-result" id="noResult">
-কোনো সেবা পাওয়া যায়নি। অন্য কিছু লিখে চেষ্টা করুন।
+কোনো সেবা বা ব্যবসা পাওয়া যায়নি।
 </div>
 
 
@@ -366,19 +409,11 @@ placeholder="আপনার প্রয়োজন লিখে খুঁজু�
 
 <p>প্রয়োজনে আমাদের সাথে যোগাযোগ করুন</p>
 
-
-<a
-class="phone"
-href="tel:01912028301"
->
+<a class="phone" href="tel:01912028301">
 📞 01912028301
 </a>
 
-
-<a
-class="phone"
-href="tel:01590067686"
->
+<a class="phone" href="tel:01590067686">
 📞 01590067686
 </a>
 
@@ -390,56 +425,107 @@ href="tel:01590067686"
 
 <div class="features">
 
-
 <div class="feature">
-
 <h3>🔎 সহজে খুঁজুন</h3>
-
 <p>
 আপনার প্রয়োজনীয় সেবা সহজে খুঁজে পাওয়ার ব্যবস্থা।
 </p>
-
 </div>
 
-
 <div class="feature">
-
 <h3>📍 স্থানীয় সেবা</h3>
-
 <p>
-ভবিষ্যতে আপনার কাছাকাছি দোকান ও সার্ভিস খুঁজে পাওয়া যাবে।
+আপনার কাছাকাছি দোকান ও সার্ভিস খুঁজে পাওয়ার সুবিধা।
 </p>
-
 </div>
 
-
 <div class="feature">
-
 <h3>⭐ রেটিং ও রিভিউ</h3>
-
 <p>
 ব্যবহারকারীর মতামত দেখে ভালো সেবা বেছে নিতে পারবেন।
 </p>
+</div>
 
 </div>
 
 
-</div>
+<!-- BUSINESS REGISTRATION -->
 
+<section class="business-form">
 
-<div class="business">
+<h2>
+🏪 Inaya-তে আপনার ব্যবসা যুক্ত করুন
+</h2>
 
-<h2>🏪 আপনার ব্যবসা Inaya-তে যুক্ত করুন</h2>
-
-<p style="margin-top:10px;">
-ব্যবসা ও সেবা Inaya-তে যুক্ত করার সুযোগ থাকবে।
+<p>
+আপনার ব্যবসার তথ্য দিন। ভবিষ্যতে মানুষ Inaya থেকে আপনার ব্যবসা খুঁজে পাবে।
 </p>
 
-<button onclick="businessMessage()">
-ব্যবসা যুক্ত করুন
+
+<input
+id="businessName"
+type="text"
+placeholder="ব্যবসার নাম"
+>
+
+<input
+id="ownerName"
+type="text"
+placeholder="মালিকের নাম"
+>
+
+<input
+id="businessPhone"
+type="tel"
+placeholder="মোবাইল নম্বর"
+>
+
+<select id="businessType">
+
+<option value="">
+ব্যবসার ধরন নির্বাচন করুন
+</option>
+
+<option>দোকান</option>
+<option>রেস্টুরেন্ট</option>
+<option>কারিগরি সেবা</option>
+<option>অনলাইন ব্যবসা</option>
+<option>কৃষি</option>
+<option>অন্যান্য</option>
+
+</select>
+
+
+<input
+id="businessAddress"
+type="text"
+placeholder="ব্যবসার ঠিকানা"
+>
+
+
+<textarea
+id="businessDescription"
+placeholder="আপনার ব্যবসা/সেবার বিবরণ"
+></textarea>
+
+
+<button
+class="business-submit"
+onclick="submitBusiness()"
+>
+✅ ব্যবসা জমা দিন
 </button>
 
+
+<div class="business-list" id="businessList">
+
+<h3 style="color:#087f5b;text-align:center;">
+📋 যুক্ত হওয়া ব্যবসা
+</h3>
+
 </div>
+
+</section>
 
 
 </main>
@@ -458,16 +544,22 @@ href="tel:01590067686"
 
 <script>
 
+/* SEARCH */
+
 function searchServices(){
 
-  const input =
-  document.getElementById("searchInput");
-
   const searchText =
-  input.value.toLowerCase().trim();
+  document
+  .getElementById("searchInput")
+  .value
+  .toLowerCase()
+  .trim();
 
   const cards =
   document.querySelectorAll(".card");
+
+  const businesses =
+  document.querySelectorAll(".business-item");
 
   const noResult =
   document.getElementById("noResult");
@@ -480,19 +572,39 @@ function searchServices(){
     const text =
     card.innerText.toLowerCase();
 
-
     if(
       searchText === "" ||
       text.includes(searchText)
     ){
 
       card.style.display = "block";
-
       found = true;
 
     }else{
 
       card.style.display = "none";
+
+    }
+
+  });
+
+
+  businesses.forEach(function(business){
+
+    const text =
+    business.innerText.toLowerCase();
+
+    if(
+      searchText === "" ||
+      text.includes(searchText)
+    ){
+
+      business.style.display = "block";
+      found = true;
+
+    }else{
+
+      business.style.display = "none";
 
     }
 
@@ -512,9 +624,11 @@ function searchServices(){
 }
 
 
+/* ENTER BUTTON */
+
 document
 .getElementById("searchInput")
-.addEventListener("keyup", function(event){
+.addEventListener("keyup",function(event){
 
   if(event.key === "Enter"){
 
@@ -525,16 +639,148 @@ document
 });
 
 
-function businessMessage(){
+/* BUSINESS REGISTRATION */
+
+function submitBusiness(){
+
+  const name =
+  document.getElementById("businessName").value.trim();
+
+  const owner =
+  document.getElementById("ownerName").value.trim();
+
+  const phone =
+  document.getElementById("businessPhone").value.trim();
+
+  const type =
+  document.getElementById("businessType").value;
+
+  const address =
+  document.getElementById("businessAddress").value.trim();
+
+  const description =
+  document.getElementById("businessDescription").value.trim();
+
+
+  if(
+    !name ||
+    !owner ||
+    !phone ||
+    !type ||
+    !address
+  ){
+
+    alert(
+      "দয়া করে প্রয়োজনীয় তথ্যগুলো পূরণ করুন।"
+    );
+
+    return;
+
+  }
+
+
+  const business = {
+
+    name:name,
+    owner:owner,
+    phone:phone,
+    type:type,
+    address:address,
+    description:description
+
+  };
+
+
+  let businesses =
+  JSON.parse(
+    localStorage.getItem("inayaBusinesses")
+  ) || [];
+
+
+  businesses.push(business);
+
+
+  localStorage.setItem(
+    "inayaBusinesses",
+    JSON.stringify(businesses)
+  );
+
+
+  document.getElementById("businessName").value="";
+  document.getElementById("ownerName").value="";
+  document.getElementById("businessPhone").value="";
+  document.getElementById("businessType").value="";
+  document.getElementById("businessAddress").value="";
+  document.getElementById("businessDescription").value="";
+
 
   alert(
-    "Business Registration খুব শিগগিরই Inaya-তে যুক্ত হবে।"
+    "✅ ধন্যবাদ! আপনার ব্যবসা Inaya-তে যুক্ত হয়েছে।"
   );
+
+
+  showBusinesses();
 
 }
 
+
+/* SHOW BUSINESSES */
+
+function showBusinesses(){
+
+  const list =
+  document.getElementById("businessList");
+
+  let businesses =
+  JSON.parse(
+    localStorage.getItem("inayaBusinesses")
+  ) || [];
+
+
+  list.innerHTML =
+  '<h3 style="color:#087f5b;text-align:center;">📋 যুক্ত হওয়া ব্যবসা</h3>';
+
+
+  businesses.forEach(function(business){
+
+    const item =
+    document.createElement("div");
+
+    item.className="business-item";
+
+    item.innerHTML = `
+
+      <h3>🏪 ${business.name}</h3>
+
+      <p>👤 মালিক: ${business.owner}</p>
+
+      <p>📞 মোবাইল: 
+      <a href="tel:${business.phone}">
+      ${business.phone}
+      </a>
+      </p>
+
+      <p>🏷️ ধরন: ${business.type}</p>
+
+      <p>📍 ঠিকানা: ${business.address}</p>
+
+      <p>📝 ${business.description || "কোনো বিবরণ দেওয়া হয়নি।"}</p>
+
+    `;
+
+
+    list.appendChild(item);
+
+  });
+
+}
+
+
+/* LOAD SAVED BUSINESSES */
+
+showBusinesses();
+
 </script>
 
-
 </body>
-</html>
+  </html>
