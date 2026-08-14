@@ -23,12 +23,30 @@ searchInput.addEventListener('input', function () {
   cards.forEach(function (card) {
     const text = card.innerText.toLowerCase();
 
-    if (searchText === '' || text.includes(searchText)) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const input = document.querySelector(".search input");
+  const cards = document.querySelectorAll(".services .card");
+
+  input.addEventListener("input", function () {
+
+    const searchText = input.value.toLowerCase().trim();
+
+    cards.forEach(function (card) {
+
+      const cardText = card.textContent.toLowerCase();
+
+      if (searchText === "" || cardText.includes(searchText)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
   });
+
 });
 </script>
 body{
