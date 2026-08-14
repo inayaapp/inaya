@@ -13,44 +13,9 @@
   box-sizing:border-box;
   font-family:Arial,sans-serif;
 }
-<script>
-const searchInput = document.querySelector('.search input');
-const cards = document.querySelectorAll('.card');
 
-searchInput.addEventListener('input', function () {
-  const searchText = this.value.toLowerCase().trim();
-
-  cards.forEach(function (card) {
-    const text = card.innerText.toLowerCase();
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const input = document.querySelector(".search input");
-  const cards = document.querySelectorAll(".services .card");
-
-  input.addEventListener("input", function () {
-
-    const searchText = input.value.toLowerCase().trim();
-
-    cards.forEach(function (card) {
-
-      const cardText = card.textContent.toLowerCase();
-
-      if (searchText === "" || cardText.includes(searchText)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-
-    });
-
-  });
-
-});
-</script>
 body{
-  background:#f5f7fa;
+  background:#f4f7f6;
   color:#222;
 }
 
@@ -62,17 +27,18 @@ header{
 }
 
 .logo{
-  font-size:40px;
+  font-size:42px;
   font-weight:bold;
 }
 
-header p{
-  margin-top:6px;
+.tagline{
+  margin-top:7px;
+  font-size:16px;
 }
 
 .search{
   max-width:650px;
-  margin:20px auto 0;
+  margin:22px auto 0;
   display:flex;
   background:white;
   border-radius:12px;
@@ -93,6 +59,7 @@ header p{
   color:white;
   padding:0 20px;
   font-size:20px;
+  cursor:pointer;
 }
 
 .container{
@@ -115,7 +82,7 @@ header p{
 }
 
 .title{
-  margin:25px 0 15px;
+  margin:28px 0 15px;
 }
 
 .services{
@@ -130,6 +97,12 @@ header p{
   text-align:center;
   border-radius:15px;
   box-shadow:0 3px 10px rgba(0,0,0,.06);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
 }
 
 .icon{
@@ -142,13 +115,13 @@ header p{
 }
 
 .card p{
-  font-size:12px;
   color:#777;
+  font-size:12px;
   margin-top:5px;
 }
 
 .contact{
-  margin-top:25px;
+  margin-top:28px;
   background:white;
   padding:25px;
   border-radius:16px;
@@ -158,26 +131,29 @@ header p{
 
 .contact h2{
   color:#087f5b;
-  margin-bottom:15px;
+  margin-bottom:8px;
 }
 
 .phone{
   display:block;
-  text-decoration:none;
+  max-width:320px;
+  margin:12px auto;
+  padding:13px;
+  border-radius:10px;
   background:#087f5b;
   color:white;
-  padding:13px;
-  margin:10px auto;
-  max-width:300px;
-  border-radius:10px;
+  text-decoration:none;
   font-size:17px;
+}
+
+.phone:hover{
+  background:#066b4c;
 }
 
 .features{
   display:grid;
   grid-template-columns:1fr;
   gap:15px;
-  margin-top:20px;
 }
 
 .feature{
@@ -192,23 +168,24 @@ header p{
   margin-bottom:8px;
 }
 
-.join{
-  margin-top:25px;
+.business{
+  margin-top:28px;
   background:#087f5b;
   color:white;
-  padding:25px;
+  padding:28px 18px;
   border-radius:16px;
   text-align:center;
 }
 
-.join button{
+.business button{
   margin-top:15px;
-  padding:12px 22px;
   border:0;
+  padding:12px 22px;
   border-radius:10px;
   background:#ff922b;
   color:white;
   font-size:16px;
+  cursor:pointer;
 }
 
 footer{
@@ -220,7 +197,18 @@ footer{
   font-size:13px;
 }
 
+.no-result{
+  display:none;
+  background:white;
+  padding:20px;
+  margin-top:15px;
+  border-radius:12px;
+  text-align:center;
+  color:#777;
+}
+
 @media(min-width:700px){
+
   .services{
     grid-template-columns:repeat(4,1fr);
   }
@@ -228,9 +216,11 @@ footer{
   .features{
     grid-template-columns:repeat(3,1fr);
   }
+
 }
 </style>
 </head>
+
 
 <body>
 
@@ -238,17 +228,27 @@ footer{
 
 <div class="logo">Inaya</div>
 
-<p>মানুষের প্রয়োজন এক জায়গায়</p>
+<div class="tagline">
+মানুষের প্রয়োজন এক জায়গায়
+</div>
 
 <div class="search">
-<input type="text" placeholder="আপনার প্রয়োজন লিখে খুঁজুন...">
-<button>🔎</button>
+
+<input
+id="searchInput"
+type="text"
+placeholder="আপনার প্রয়োজন লিখে খুঁজুন..."
+>
+
+<button onclick="searchServices()">🔎</button>
+
 </div>
 
 </header>
 
 
 <main class="container">
+
 
 <div class="welcome">
 
@@ -262,15 +262,18 @@ footer{
 </div>
 
 
-<h2 class="title">জনপ্রিয় সেবা</h2>
+<h2 class="title">🌟 জনপ্রিয় সেবা</h2>
 
-<div class="services">
+
+<div class="services" id="serviceList">
+
 
 <div class="card">
 <div class="icon">🏪</div>
 <h3>দোকান ও ব্যবসা</h3>
-<p>স্থানীয় ব্যবসা</p>
+<p>স্থানীয় ব্যবসা খুঁজুন</p>
 </div>
+
 
 <div class="card">
 <div class="icon">🔧</div>
@@ -278,11 +281,13 @@ footer{
 <p>মিস্ত্রি ও সার্ভিস</p>
 </div>
 
+
 <div class="card">
 <div class="icon">💼</div>
 <h3>চাকরি</h3>
 <p>চাকরির সুযোগ</p>
 </div>
+
 
 <div class="card">
 <div class="icon">🛒</div>
@@ -290,11 +295,13 @@ footer{
 <p>প্রয়োজনীয় পণ্য</p>
 </div>
 
+
 <div class="card">
 <div class="icon">📍</div>
 <h3>কাছাকাছি সেবা</h3>
 <p>আপনার আশেপাশে</p>
 </div>
+
 
 <div class="card">
 <div class="icon">📢</div>
@@ -302,11 +309,13 @@ footer{
 <p>গুরুত্বপূর্ণ তথ্য</p>
 </div>
 
+
 <div class="card">
 <div class="icon">📚</div>
 <h3>শিক্ষা</h3>
 <p>শিক্ষামূলক তথ্য</p>
 </div>
+
 
 <div class="card">
 <div class="icon">🆘</div>
@@ -314,11 +323,13 @@ footer{
 <p>জরুরি প্রয়োজন</p>
 </div>
 
+
 <div class="card">
 <div class="icon">⭐</div>
 <h3>রিভিউ</h3>
-<p>সেবা যাচাই</p>
+<p>সেবার মতামত</p>
 </div>
+
 
 <div class="card">
 <div class="icon">🔔</div>
@@ -326,11 +337,13 @@ footer{
 <p>নতুন আপডেট</p>
 </div>
 
+
 <div class="card">
 <div class="icon">👤</div>
 <h3>আমার প্রোফাইল</h3>
 <p>ব্যক্তিগত অ্যাকাউন্ট</p>
 </div>
+
 
 <div class="card">
 <div class="icon">🌐</div>
@@ -338,6 +351,12 @@ footer{
 <p>ভাষা পরিবর্তন</p>
 </div>
 
+
+</div>
+
+
+<div class="no-result" id="noResult">
+কোনো সেবা পাওয়া যায়নি। অন্য কিছু লিখে চেষ্টা করুন।
 </div>
 
 
@@ -347,56 +366,81 @@ footer{
 
 <p>প্রয়োজনে আমাদের সাথে যোগাযোগ করুন</p>
 
-<a class="phone" href="tel:01912028301">
+
+<a
+class="phone"
+href="tel:01912028301"
+>
 📞 01912028301
 </a>
 
-<a class="phone" href="tel:01590067686">
+
+<a
+class="phone"
+href="tel:01590067686"
+>
 📞 01590067686
 </a>
 
 </div>
 
 
-<h2 class="title">Inaya-এর বিশেষ সুবিধা</h2>
+<h2 class="title">💡 Inaya-এর বিশেষ সুবিধা</h2>
+
 
 <div class="features">
 
-<div class="feature">
-<h3>🔎 সহজে খুঁজুন</h3>
-<p>
-প্রয়োজনীয় সেবা ও তথ্য সহজে খুঁজে পাওয়ার ব্যবস্থা।
-</p>
-</div>
 
 <div class="feature">
+
+<h3>🔎 সহজে খুঁজুন</h3>
+
+<p>
+আপনার প্রয়োজনীয় সেবা সহজে খুঁজে পাওয়ার ব্যবস্থা।
+</p>
+
+</div>
+
+
+<div class="feature">
+
 <h3>📍 স্থানীয় সেবা</h3>
+
 <p>
 ভবিষ্যতে আপনার কাছাকাছি দোকান ও সার্ভিস খুঁজে পাওয়া যাবে।
 </p>
+
 </div>
+
 
 <div class="feature">
+
 <h3>⭐ রেটিং ও রিভিউ</h3>
+
 <p>
-ভালো সেবা বেছে নিতে ব্যবহারকারীর মতামত দেখা যাবে।
+ব্যবহারকারীর মতামত দেখে ভালো সেবা বেছে নিতে পারবেন।
 </p>
-</div>
 
 </div>
 
 
-<div class="join">
+</div>
+
+
+<div class="business">
 
 <h2>🏪 আপনার ব্যবসা Inaya-তে যুক্ত করুন</h2>
 
 <p style="margin-top:10px;">
-ভবিষ্যতে ব্যবসা ও সেবা Inaya-তে যুক্ত করার সুযোগ থাকবে।
+ব্যবসা ও সেবা Inaya-তে যুক্ত করার সুযোগ থাকবে।
 </p>
 
-<button>ব্যবসা যুক্ত করুন</button>
+<button onclick="businessMessage()">
+ব্যবসা যুক্ত করুন
+</button>
 
 </div>
+
 
 </main>
 
@@ -410,6 +454,87 @@ footer{
 </p>
 
 </footer>
+
+
+<script>
+
+function searchServices(){
+
+  const input =
+  document.getElementById("searchInput");
+
+  const searchText =
+  input.value.toLowerCase().trim();
+
+  const cards =
+  document.querySelectorAll(".card");
+
+  const noResult =
+  document.getElementById("noResult");
+
+  let found = false;
+
+
+  cards.forEach(function(card){
+
+    const text =
+    card.innerText.toLowerCase();
+
+
+    if(
+      searchText === "" ||
+      text.includes(searchText)
+    ){
+
+      card.style.display = "block";
+
+      found = true;
+
+    }else{
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  if(searchText !== "" && !found){
+
+    noResult.style.display = "block";
+
+  }else{
+
+    noResult.style.display = "none";
+
+  }
+
+}
+
+
+document
+.getElementById("searchInput")
+.addEventListener("keyup", function(event){
+
+  if(event.key === "Enter"){
+
+    searchServices();
+
+  }
+
+});
+
+
+function businessMessage(){
+
+  alert(
+    "Business Registration খুব শিগগিরই Inaya-তে যুক্ত হবে।"
+  );
+
+}
+
+</script>
+
 
 </body>
 </html>
