@@ -13,7 +13,24 @@
   box-sizing:border-box;
   font-family:Arial,sans-serif;
 }
+<script>
+const searchInput = document.querySelector('.search input');
+const cards = document.querySelectorAll('.card');
 
+searchInput.addEventListener('input', function () {
+  const searchText = this.value.toLowerCase().trim();
+
+  cards.forEach(function (card) {
+    const text = card.innerText.toLowerCase();
+
+    if (searchText === '' || text.includes(searchText)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+</script>
 body{
   background:#f5f7fa;
   color:#222;
