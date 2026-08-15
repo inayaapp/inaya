@@ -2,192 +2,88 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b7a53">
-<meta name="description" content="Inaya - মানুষের প্রয়োজনীয় ডিজিটাল সুবিধা এক জায়গায়">
-<title>Inaya</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#087f5b">
+<meta name="description" content="Inaya - মানুষের দৈনন্দিন ও ব্যবসার প্রয়োজনীয় ডিজিটাল সেবা">
+<title>Inaya - Digital Service Platform</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-  background:#f4f7f6;
-  color:#222;
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+background:#f4f7f6;color:#222;line-height:1.6
 }
-
 header{
-  background:#0b7a53;
-  color:white;
-  padding:22px 15px;
-  text-align:center;
+background:#087f5b;color:white;padding:22px 15px;text-align:center;
+position:sticky;top:0;z-index:10
 }
-
-.logo{
-  font-size:34px;
-  font-weight:bold;
+.logo{font-size:35px;font-weight:bold}
+.tag{font-size:14px}
+.search{
+max-width:650px;margin:15px auto 0;display:flex;gap:7px
 }
-
-.tagline{
-  margin-top:6px;
-  font-size:15px;
+.search input{
+flex:1;padding:13px;border:0;border-radius:10px;font-size:16px
 }
-
-.search-box{
-  max-width:650px;
-  margin:18px auto 0;
-  display:flex;
-  gap:8px;
+.search button{
+border:0;border-radius:10px;padding:0 18px;font-size:19px;cursor:pointer
 }
-
-.search-box input{
-  flex:1;
-  padding:13px;
-  border:none;
-  border-radius:10px;
-  font-size:16px;
-  outline:none;
-}
-
-.search-box button{
-  border:none;
-  background:white;
-  color:#0b7a53;
-  padding:0 18px;
-  border-radius:10px;
-  font-size:20px;
-  cursor:pointer;
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px 15px;
-}
-
+.container{max-width:1100px;margin:auto;padding:18px 14px}
 .welcome{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  margin-bottom:20px;
-  box-shadow:0 2px 8px #00000012;
+background:white;padding:20px;border-radius:16px;margin-bottom:18px;
+box-shadow:0 2px 8px #0001
 }
-
-.welcome h2{
-  color:#0b7a53;
-  margin-bottom:8px;
+.welcome h2{color:#087f5b;margin-bottom:6px}
+.category{
+margin:22px 0 10px;color:#087f5b;font-size:22px
 }
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-  gap:15px;
+.grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px
 }
-
 .card{
-  background:white;
-  border-radius:15px;
-  padding:20px 12px;
-  text-align:center;
-  cursor:pointer;
-  box-shadow:0 2px 8px #00000012;
-  transition:.2s;
+background:white;border-radius:15px;padding:18px 10px;text-align:center;
+box-shadow:0 2px 8px #0001;cursor:pointer;transition:.2s
 }
-
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 5px 15px #00000020;
-}
-
-.icon{
-  font-size:35px;
-  margin-bottom:10px;
-}
-
-.card h3{
-  font-size:16px;
-  color:#333;
-}
-
+.card:hover{transform:translateY(-3px)}
+.icon{font-size:32px}
+.card h3{font-size:15px;margin-top:6px}
 .section{
-  display:none;
-  background:white;
-  padding:22px;
-  margin-top:20px;
-  border-radius:15px;
-  box-shadow:0 2px 8px #00000012;
+display:none;background:white;margin-top:20px;padding:20px;border-radius:15px;
+box-shadow:0 2px 8px #0001
 }
-
-.section.active{
-  display:block;
+.section.active{display:block}
+.section h2{color:#087f5b;margin-bottom:12px}
+.back,.btn{
+background:#087f5b;color:white;border:0;border-radius:8px;
+padding:10px 16px;cursor:pointer;margin-top:8px
 }
-
-.section h2{
-  color:#0b7a53;
-  margin-bottom:15px;
-}
-
-.back{
-  border:none;
-  background:#0b7a53;
-  color:white;
-  padding:10px 16px;
-  border-radius:8px;
-  cursor:pointer;
-  margin-bottom:15px;
-}
-
+.back{margin-top:0;margin-bottom:15px}
 input,select,textarea{
-  width:100%;
-  padding:12px;
-  margin:7px 0;
-  border:1px solid #ddd;
-  border-radius:8px;
-  font-size:15px;
+width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;
+border-radius:8px;font-size:15px
 }
-
-.action{
-  background:#0b7a53;
-  color:white;
-  border:none;
-  padding:12px 18px;
-  border-radius:8px;
-  cursor:pointer;
-  margin-top:8px;
-}
-
 .result{
-  background:#f0f8f4;
-  padding:15px;
-  margin-top:12px;
-  border-radius:10px;
+background:#eef9f4;padding:14px;border-radius:10px;margin-top:12px
 }
-
+.contact{
+display:flex;justify-content:space-between;align-items:center;
+gap:10px;padding:12px;background:#f5f5f5;border-radius:10px;margin:8px 0
+}
+.contact a{
+background:#087f5b;color:white;text-decoration:none;padding:7px 12px;
+border-radius:7px
+}
+.notice{
+background:#fff8df;padding:13px;border-radius:10px;margin:10px 0
+}
+.noresult{text-align:center;color:#777;padding:20px;display:none}
 footer{
-  margin-top:30px;
-  background:#073f2c;
-  color:white;
-  text-align:center;
-  padding:25px 15px;
-  line-height:1.8;
+background:#063d2c;color:white;text-align:center;padding:25px 15px;margin-top:30px
 }
-
-.no-result{
-  text-align:center;
-  padding:25px;
-  color:#777;
-  display:none;
-}
-
-@media(max-width:500px){
-  .logo{font-size:30px;}
-  .features{
-    grid-template-columns:repeat(2,1fr);
-  }
+.small{font-size:13px;color:#666}
+@media(max-width:480px){
+.logo{font-size:30px}
+.grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -195,395 +91,627 @@ footer{
 <body>
 
 <header>
-  <div class="logo">Inaya</div>
-  <div class="tagline">সহজ ডিজিটাল সেবা, এক জায়গায়</div>
+<div class="logo">Inaya</div>
+<div class="tag">মানুষ ও ব্যবসার প্রয়োজনীয় সেবা এক জায়গায়</div>
 
-  <div class="search-box">
-    <input id="search" type="search" placeholder="যে সেবা খুঁজছেন লিখুন...">
-    <button onclick="searchService()">🔍</button>
-  </div>
+<div class="search">
+<input id="search" type="search" placeholder="সেবা খুঁজুন...">
+<button onclick="searchServices()">🔍</button>
+</div>
 </header>
 
 <main class="container">
 
-  <div class="welcome">
-    <h2>Inaya-তে স্বাগতম 👋</h2>
-    <p>
-      মানুষের প্রয়োজনীয় বিভিন্ন তথ্য ও সুবিধা সহজভাবে এক জায়গায়
-      দেওয়ার জন্য Inaya তৈরি করা হয়েছে।
-    </p>
-  </div>
+<div class="welcome">
+<h2>Inaya-তে স্বাগতম 👋</h2>
+<p>
+মানুষের দৈনন্দিন প্রয়োজন এবং ছোট ব্যবসার প্রয়োজনীয়
+ডিজিটাল সুবিধা সহজভাবে এক জায়গায় দেওয়াই Inaya-এর উদ্দেশ্য।
+</p>
+</div>
 
-  <div class="features" id="features">
+<h2 class="category">👤 মানুষের প্রয়োজনীয় সেবা</h2>
 
-    <div class="card" data-name="ক্যালকুলেটর হিসাব" onclick="openSection('calculator')">
-      <div class="icon">🧮</div>
-      <h3>ক্যালকুলেটর</h3>
-    </div>
+<div class="grid">
 
-    <div class="card" data-name="বয়স হিসাব বয়স ক্যালকুলেটর" onclick="openSection('age')">
-      <div class="icon">🎂</div>
-      <h3>বয়স হিসাব</h3>
-    </div>
+<div class="card" data-search="যোগাযোগ মোবাইল নম্বর জরুরি নম্বর" onclick="openSection('contact')">
+<div class="icon">📞</div><h3>যোগাযোগ ও নম্বর</h3>
+</div>
 
-    <div class="card" data-name="টাকার হিসাব ঋণ হিসাব" onclick="openSection('money')">
-      <div class="icon">💰</div>
-      <h3>টাকার হিসাব</h3>
-    </div>
+<div class="card" data-search="জরুরি সেবা পুলিশ ফায়ার অ্যাম্বুলেন্স" onclick="openSection('emergency')">
+<div class="icon">🚨</div><h3>জরুরি সেবা</h3>
+</div>
 
-    <div class="card" data-name="শতাংশ পার্সেন্ট হিসাব" onclick="openSection('percent')">
-      <div class="icon">📊</div>
-      <h3>শতাংশ হিসাব</h3>
-    </div>
+<div class="card" data-search="ক্যালকুলেটর হিসাব" onclick="openSection('calculator')">
+<div class="icon">🧮</div><h3>ক্যালকুলেটর</h3>
+</div>
 
-    <div class="card" data-name="জমি জমির হিসাব" onclick="openSection('land')">
-      <div class="icon">🌾</div>
-      <h3>জমির হিসাব</h3>
-    </div>
+<div class="card" data-search="বয়স জন্ম তারিখ বয়স হিসাব" onclick="openSection('age')">
+<div class="icon">🎂</div><h3>বয়স হিসাব</h3>
+</div>
 
-    <div class="card" data-name="ইউনিট রূপান্তর মাপ" onclick="openSection('unit')">
-      <div class="icon">📏</div>
-      <h3>ইউনিট রূপান্তর</h3>
-    </div>
+<div class="card" data-search="আয় ব্যয় টাকা সঞ্চয়" onclick="openSection('personalMoney')">
+<div class="icon">💰</div><h3>আয়–ব্যয়</h3>
+</div>
 
-    <div class="card" data-name="নোট নোটপ্যাড" onclick="openSection('note')">
-      <div class="icon">📝</div>
-      <h3>নোট</h3>
-    </div>
+<div class="card" data-search="শতাংশ পার্সেন্ট" onclick="openSection('percent')">
+<div class="icon">📊</div><h3>শতাংশ হিসাব</h3>
+</div>
 
-    <div class="card" data-name="তথ্য সাহায্য" onclick="openSection('info')">
-      <div class="icon">ℹ️</div>
-      <h3>Inaya সম্পর্কে</h3>
-    </div>
+<div class="card" data-search="জমি শতক একর বর্গফুট" onclick="openSection('land')">
+<div class="icon">🌾</div><h3>জমির হিসাব</h3>
+</div>
 
-  </div>
+<div class="card" data-search="চাকরি নিয়োগ কর্মসংস্থান" onclick="openSection('job')">
+<div class="icon">💼</div><h3>চাকরি</h3>
+</div>
 
-  <div id="noResult" class="no-result">
-    কোনো সেবা পাওয়া যায়নি।
-  </div>
+<div class="card" data-search="শিক্ষা পড়াশোনা" onclick="openSection('education')">
+<div class="icon">📚</div><h3>শিক্ষা</h3>
+</div>
 
-  <!-- Calculator -->
-  <div class="section" id="calculator">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>🧮 ক্যালকুলেটর</h2>
+<div class="card" data-search="নোট লেখা সংরক্ষণ" onclick="openSection('note')">
+<div class="icon">📝</div><h3>আমার নোট</h3>
+</div>
 
-    <input id="num1" type="number" placeholder="প্রথম সংখ্যা">
-    <input id="num2" type="number" placeholder="দ্বিতীয় সংখ্যা">
+</div>
 
-    <select id="operator">
-      <option value="+">যোগ (+)</option>
-      <option value="-">বিয়োগ (-)</option>
-      <option value="*">গুণ (×)</option>
-      <option value="/">ভাগ (÷)</option>
-    </select>
+<h2 class="category">🏪 ব্যবসার প্রয়োজনীয় সেবা</h2>
 
-    <button class="action" onclick="calculate()">হিসাব করুন</button>
+<div class="grid">
 
-    <div class="result" id="calcResult">ফলাফল এখানে দেখাবে</div>
-  </div>
+<div class="card" data-search="ব্যবসা আয় ব্যয়" onclick="openSection('businessMoney')">
+<div class="icon">💵</div><h3>ব্যবসার আয়–ব্যয়</h3>
+</div>
 
-  <!-- Age -->
-  <div class="section" id="age">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>🎂 বয়স হিসাব</h2>
+<div class="card" data-search="লাভ ক্ষতি ব্যবসা" onclick="openSection('profit')">
+<div class="icon">📈</div><h3>লাভ–ক্ষতি</h3>
+</div>
 
-    <label>জন্ম তারিখ</label>
-    <input id="birthDate" type="date">
+<div class="card" data-search="বাকি কাস্টমার দেনা পাওনা" onclick="openSection('due')">
+<div class="icon">👥</div><h3>বাকি হিসাব</h3>
+</div>
 
-    <button class="action" onclick="calculateAge()">বয়স বের করুন</button>
+<div class="card" data-search="পণ্য দাম বিক্রি ক্রয়" onclick="openSection('product')">
+<div class="icon">🏷️</div><h3>পণ্যের হিসাব</h3>
+</div>
 
-    <div class="result" id="ageResult">ফলাফল এখানে দেখাবে</div>
-  </div>
+<div class="card" data-search="স্টক পণ্য মজুদ" onclick="openSection('stock')">
+<div class="icon">📦</div><h3>স্টক হিসাব</h3>
+</div>
 
-  <!-- Money -->
-  <div class="section" id="money">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>💰 টাকার হিসাব</h2>
+<div class="card" data-search="বিল রসিদ" onclick="openSection('bill')">
+<div class="icon">🧾</div><h3>বিল/রসিদ</h3>
+</div>
 
-    <input id="income" type="number" placeholder="মোট আয়">
-    <input id="expense" type="number" placeholder="মোট খরচ">
+</div>
 
-    <button class="action" onclick="moneyCalculate()">হিসাব করুন</button>
+<div id="noresult" class="noresult">
+কোনো সেবা পাওয়া যায়নি।
+</div>
 
-    <div class="result" id="moneyResult">ফলাফল এখানে দেখাবে</div>
-  </div>
 
-  <!-- Percentage -->
-  <div class="section" id="percent">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>📊 শতাংশ হিসাব</h2>
+<!-- CONTACT -->
 
-    <input id="percentNumber" type="number" placeholder="মোট সংখ্যা">
-    <input id="percentValue" type="number" placeholder="শতাংশ (%)">
+<div class="section" id="contact">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>📞 প্রয়োজনীয় যোগাযোগ</h2>
 
-    <button class="action" onclick="percentCalculate()">হিসাব করুন</button>
+<div class="notice">
+এখানে ভবিষ্যতে যাচাই করা সরকারি প্রতিষ্ঠান, হাসপাতাল,
+ব্যবসা ও অন্যান্য প্রয়োজনীয় যোগাযোগের তথ্য যোগ করা যাবে।
+</div>
 
-    <div class="result" id="percentResult">ফলাফল এখানে দেখাবে</div>
-  </div>
+<div class="contact">
+<span>🚨 জাতীয় জরুরি সেবা</span>
+<a href="tel:999">কল করুন</a>
+</div>
 
-  <!-- Land -->
-  <div class="section" id="land">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>🌾 জমির হিসাব</h2>
+<div class="contact">
+<span>📞 বাংলাদেশ পুলিশ</span>
+<a href="tel:999">কল করুন</a>
+</div>
 
-    <input id="landShotok" type="number" placeholder="শতক">
+<p class="small">
+নম্বর পরিবর্তন হতে পারে। গুরুত্বপূর্ণ নম্বর ব্যবহারের আগে
+সংশ্লিষ্ট প্রতিষ্ঠানের অফিসিয়াল তথ্য যাচাই করুন।
+</p>
+</div>
 
-    <button class="action" onclick="landCalculate()">হিসাব করুন</button>
 
-    <div class="result" id="landResult">
-      ১ শতক = ৪৩৫.৬ বর্গফুট<br>
-      ১ একর = ১০০ শতক
-    </div>
-  </div>
+<!-- EMERGENCY -->
 
-  <!-- Unit -->
-  <div class="section" id="unit">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>📏 ইউনিট রূপান্তর</h2>
+<div class="section" id="emergency">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>🚨 জরুরি সেবা</h2>
 
-    <input id="meter" type="number" placeholder="মিটার">
+<div class="contact">
+<span>জাতীয় জরুরি সেবা</span>
+<a href="tel:999">999</a>
+</div>
 
-    <button class="action" onclick="unitCalculate()">ফুটে রূপান্তর করুন</button>
+<div class="notice">
+জরুরি অবস্থায় দ্রুত সংশ্লিষ্ট কর্তৃপক্ষের সঙ্গে যোগাযোগ করুন।
+</div>
+</div>
 
-    <div class="result" id="unitResult">ফলাফল এখানে দেখাবে</div>
-  </div>
 
-  <!-- Note -->
-  <div class="section" id="note">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>📝 আমার নোট</h2>
+<!-- CALCULATOR -->
 
-    <textarea id="noteText" rows="8" placeholder="আপনার প্রয়োজনীয় নোট লিখুন..."></textarea>
+<div class="section" id="calculator">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>🧮 ক্যালকুলেটর</h2>
 
-    <button class="action" onclick="saveNote()">নোট সংরক্ষণ করুন</button>
+<input id="a" type="number" placeholder="প্রথম সংখ্যা">
+<input id="b" type="number" placeholder="দ্বিতীয় সংখ্যা">
 
-    <div class="result" id="noteResult"></div>
-  </div>
+<select id="op">
+<option value="+">যোগ (+)</option>
+<option value="-">বিয়োগ (-)</option>
+<option value="*">গুণ (×)</option>
+<option value="/">ভাগ (÷)</option>
+</select>
 
-  <!-- Info -->
-  <div class="section" id="info">
-    <button class="back" onclick="closeSections()">← ফিরে যান</button>
-    <h2>ℹ️ Inaya সম্পর্কে</h2>
+<button class="btn" onclick="calc()">হিসাব করুন</button>
+<div class="result" id="calcResult">ফলাফল এখানে দেখাবে</div>
+</div>
 
-    <p>
-      <b>Inaya</b> একটি সহজ ও ব্যবহারবান্ধব ডিজিটাল প্ল্যাটফর্ম।
-      মানুষের প্রয়োজনীয় বিভিন্ন সুবিধা এক জায়গায় নিয়ে আসাই
-      Inaya-এর লক্ষ্য।
-    </p>
 
-    <br>
+<!-- AGE -->
 
-    <p>
-      ভবিষ্যতে এখানে আরও অনেক দরকারি সেবা যুক্ত করা হবে।
-    </p>
-  </div>
+<div class="section" id="age">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>🎂 বয়স হিসাব</h2>
+
+<input id="birth" type="date">
+<button class="btn" onclick="ageCalc()">বয়স বের করুন</button>
+
+<div class="result" id="ageResult"></div>
+</div>
+
+
+<!-- PERSONAL MONEY -->
+
+<div class="section" id="personalMoney">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>💰 ব্যক্তিগত আয়–ব্যয়</h2>
+
+<input id="income" type="number" placeholder="মোট আয়">
+<input id="expense" type="number" placeholder="মোট ব্যয়">
+
+<button class="btn" onclick="personalCalc()">হিসাব করুন</button>
+
+<div class="result" id="personalResult"></div>
+</div>
+
+
+<!-- PERCENT -->
+
+<div class="section" id="percent">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>📊 শতাংশ হিসাব</h2>
+
+<input id="pnum" type="number" placeholder="মূল সংখ্যা">
+<input id="pvalue" type="number" placeholder="শতাংশ (%)">
+
+<button class="btn" onclick="percentCalc()">হিসাব করুন</button>
+
+<div class="result" id="percentResult"></div>
+</div>
+
+
+<!-- LAND -->
+
+<div class="section" id="land">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>🌾 জমির হিসাব</h2>
+
+<input id="shotok" type="number" placeholder="শতক">
+
+<button class="btn" onclick="landCalc()">হিসাব করুন</button>
+
+<div class="result" id="landResult">
+১ শতক = ৪৩৫.৬ বর্গফুট<br>
+১০০ শতক = ১ একর
+</div>
+</div>
+
+
+<!-- JOB -->
+
+<div class="section" id="job">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>💼 চাকরি</h2>
+
+<div class="notice">
+Inaya-তে ভবিষ্যতে সরকারি ও বেসরকারি চাকরির
+নিয়োগ বিজ্ঞপ্তি এবং প্রয়োজনীয় তথ্য যুক্ত করা যাবে।
+</div>
+
+<p>বর্তমানে এখানে তথ্য বিভাগ প্রস্তুত রাখা হয়েছে।</p>
+</div>
+
+
+<!-- EDUCATION -->
+
+<div class="section" id="education">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>📚 শিক্ষা</h2>
+
+<div class="notice">
+শিক্ষার্থী ও চাকরিপ্রার্থীদের প্রয়োজনীয় শিক্ষা,
+পরীক্ষা ও প্রস্তুতির তথ্য ভবিষ্যতে এখানে যুক্ত করা হবে।
+</div>
+</div>
+
+
+<!-- NOTE -->
+
+<div class="section" id="note">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>📝 আমার নোট</h2>
+
+<textarea id="noteText" rows="8" placeholder="আপনার নোট লিখুন..."></textarea>
+
+<button class="btn" onclick="saveNote()">সংরক্ষণ করুন</button>
+
+<div class="result" id="noteResult"></div>
+</div>
+
+
+<!-- BUSINESS MONEY -->
+
+<div class="section" id="businessMoney">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>💵 ব্যবসার আয়–ব্যয়</h2>
+
+<input id="sales" type="number" placeholder="মোট বিক্রি">
+<input id="businessExpense" type="number" placeholder="মোট খরচ">
+
+<button class="btn" onclick="businessMoneyCalc()">হিসাব করুন</button>
+
+<div class="result" id="businessMoneyResult"></div>
+</div>
+
+
+<!-- PROFIT -->
+
+<div class="section" id="profit">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>📈 লাভ–ক্ষতি</h2>
+
+<input id="buyPrice" type="number" placeholder="ক্রয় মূল্য">
+<input id="sellPrice" type="number" placeholder="বিক্রয় মূল্য">
+
+<button class="btn" onclick="profitCalc()">হিসাব করুন</button>
+
+<div class="result" id="profitResult"></div>
+</div>
+
+
+<!-- DUE -->
+
+<div class="section" id="due">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>👥 বাকি হিসাব</h2>
+
+<input id="customer" placeholder="কাস্টমারের নাম">
+<input id="dueAmount" type="number" placeholder="বাকি টাকা">
+
+<button class="btn" onclick="saveDue()">সংরক্ষণ করুন</button>
+
+<div class="result" id="dueResult"></div>
+</div>
+
+
+<!-- PRODUCT -->
+
+<div class="section" id="product">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>🏷️ পণ্যের হিসাব</h2>
+
+<input id="productName" placeholder="পণ্যের নাম">
+<input id="productBuy" type="number" placeholder="ক্রয় মূল্য">
+<input id="productSell" type="number" placeholder="বিক্রয় মূল্য">
+
+<button class="btn" onclick="productCalc()">হিসাব করুন</button>
+
+<div class="result" id="productResult"></div>
+</div>
+
+
+<!-- STOCK -->
+
+<div class="section" id="stock">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>📦 স্টক হিসাব</h2>
+
+<input id="stockName" placeholder="পণ্যের নাম">
+<input id="stockQty" type="number" placeholder="বর্তমান পরিমাণ">
+
+<button class="btn" onclick="stockSave()">সংরক্ষণ করুন</button>
+
+<div class="result" id="stockResult"></div>
+</div>
+
+
+<!-- BILL -->
+
+<div class="section" id="bill">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>🧾 বিল / রসিদ</h2>
+
+<input id="billCustomer" placeholder="কাস্টমারের নাম">
+<input id="billProduct" placeholder="পণ্যের নাম">
+<input id="billQty" type="number" placeholder="পরিমাণ">
+<input id="billPrice" type="number" placeholder="একক মূল্য">
+
+<button class="btn" onclick="makeBill()">রসিদ তৈরি করুন</button>
+
+<div class="result" id="billResult"></div>
+</div>
 
 </main>
 
+
 <footer>
-  <b>Inaya</b><br>
-  সহজ ডিজিটাল সেবা, এক জায়গায়<br>
-  © 2026 Inaya
+<b>Inaya</b>
+<br>
+মানুষ ও ব্যবসার প্রয়োজনীয় সেবা এক জায়গায়
+<br><br>
+© 2026 Inaya
 </footer>
+
 
 <script>
 
 function openSection(id){
-  document.querySelectorAll(".section").forEach(s=>{
-    s.classList.remove("active");
-  });
-
-  document.getElementById(id).classList.add("active");
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function closeSections(){
-  document.querySelectorAll(".section").forEach(s=>{
-    s.classList.remove("active");
-  });
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+window.scrollTo({top:0,behavior:"smooth"});
 }
 
-function calculate(){
+function calc(){
+let a=Number(document.getElementById("a").value);
+let b=Number(document.getElementById("b").value);
+let op=document.getElementById("op").value;
 
-  let a=parseFloat(document.getElementById("num1").value);
-  let b=parseFloat(document.getElementById("num2").value);
-  let op=document.getElementById("operator").value;
-
-  if(isNaN(a)||isNaN(b)){
-    document.getElementById("calcResult").innerText="দয়া করে দুটি সংখ্যা দিন।";
-    return;
-  }
-
-  let result;
-
-  if(op==="+") result=a+b;
-  if(op==="-") result=a-b;
-  if(op==="*") result=a*b;
-
-  if(op==="/"){
-    if(b===0){
-      document.getElementById("calcResult").innerText="০ দিয়ে ভাগ করা যায় না।";
-      return;
-    }
-    result=a/b;
-  }
-
-  document.getElementById("calcResult").innerText="ফলাফল: "+result;
+if(isNaN(a)||isNaN(b)){
+document.getElementById("calcResult").innerText="দুটি সংখ্যা লিখুন।";
+return;
 }
 
-function calculateAge(){
-
-  let birth=document.getElementById("birthDate").value;
-
-  if(!birth){
-    document.getElementById("ageResult").innerText="জন্ম তারিখ নির্বাচন করুন।";
-    return;
-  }
-
-  let dob=new Date(birth);
-  let today=new Date();
-
-  let years=today.getFullYear()-dob.getFullYear();
-  let months=today.getMonth()-dob.getMonth();
-  let days=today.getDate()-dob.getDate();
-
-  if(days<0){
-    months--;
-    let previousMonth=new Date(
-      today.getFullYear(),
-      today.getMonth(),
-      0
-    );
-    days+=previousMonth.getDate();
-  }
-
-  if(months<0){
-    years--;
-    months+=12;
-  }
-
-  document.getElementById("ageResult").innerText=
-    "আপনার বয়স: "+years+" বছর "+months+" মাস "+days+" দিন";
+let r;
+if(op==="+")r=a+b;
+if(op==="-")r=a-b;
+if(op==="*")r=a*b;
+if(op==="/"){
+if(b===0){
+document.getElementById("calcResult").innerText="০ দিয়ে ভাগ করা যাবে না।";
+return;
+}
+r=a/b;
 }
 
-function moneyCalculate(){
-
-  let income=parseFloat(document.getElementById("income").value)||0;
-  let expense=parseFloat(document.getElementById("expense").value)||0;
-
-  let balance=income-expense;
-
-  document.getElementById("moneyResult").innerText=
-    "অবশিষ্ট টাকা: "+balance+" টাকা";
+document.getElementById("calcResult").innerText="ফলাফল: "+r;
 }
 
-function percentCalculate(){
+function ageCalc(){
+let value=document.getElementById("birth").value;
 
-  let number=parseFloat(document.getElementById("percentNumber").value);
-  let percent=parseFloat(document.getElementById("percentValue").value);
-
-  if(isNaN(number)||isNaN(percent)){
-    document.getElementById("percentResult").innerText=
-      "দয়া করে দুটি সংখ্যা দিন।";
-    return;
-  }
-
-  let result=(number*percent)/100;
-
-  document.getElementById("percentResult").innerText=
-    percent+"% of "+number+" = "+result;
+if(!value){
+document.getElementById("ageResult").innerText="জন্ম তারিখ নির্বাচন করুন।";
+return;
 }
 
-function landCalculate(){
+let dob=new Date(value);
+let today=new Date();
 
-  let shotok=parseFloat(document.getElementById("landShotok").value);
+let y=today.getFullYear()-dob.getFullYear();
+let m=today.getMonth()-dob.getMonth();
+let d=today.getDate()-dob.getDate();
 
-  if(isNaN(shotok)){
-    document.getElementById("landResult").innerText=
-      "দয়া করে শতকের পরিমাণ লিখুন।";
-    return;
-  }
-
-  let sqft=shotok*435.6;
-
-  document.getElementById("landResult").innerText=
-    shotok+" শতক = "+sqft.toFixed(2)+" বর্গফুট";
+if(d<0){
+m--;
+d+=new Date(today.getFullYear(),today.getMonth(),0).getDate();
 }
 
-function unitCalculate(){
+if(m<0){
+y--;
+m+=12;
+}
 
-  let meter=parseFloat(document.getElementById("meter").value);
+document.getElementById("ageResult").innerText=
+"বয়স: "+y+" বছর "+m+" মাস "+d+" দিন";
+}
 
-  if(isNaN(meter)){
-    document.getElementById("unitResult").innerText=
-      "দয়া করে মিটারের পরিমাণ লিখুন।";
-    return;
-  }
+function personalCalc(){
+let income=Number(document.getElementById("income").value)||0;
+let expense=Number(document.getElementById("expense").value)||0;
 
-  let feet=meter*3.28084;
+document.getElementById("personalResult").innerText=
+"অবশিষ্ট: "+(income-expense)+" টাকা";
+}
 
-  document.getElementById("unitResult").innerText=
-    meter+" মিটার = "+feet.toFixed(2)+" ফুট";
+function percentCalc(){
+let n=Number(document.getElementById("pnum").value);
+let p=Number(document.getElementById("pvalue").value);
+
+if(isNaN(n)||isNaN(p)){
+document.getElementById("percentResult").innerText="তথ্য দিন।";
+return;
+}
+
+document.getElementById("percentResult").innerText=
+p+"% = "+((n*p)/100);
+}
+
+function landCalc(){
+let s=Number(document.getElementById("shotok").value);
+
+if(isNaN(s)){
+document.getElementById("landResult").innerText="শতকের পরিমাণ দিন।";
+return;
+}
+
+document.getElementById("landResult").innerHTML=
+s+" শতক = "+(s*435.6).toFixed(2)+" বর্গফুট<br>"+
+s+" শতক = "+(s/100).toFixed(4)+" একর";
+}
+
+function businessMoneyCalc(){
+let sales=Number(document.getElementById("sales").value)||0;
+let exp=Number(document.getElementById("businessExpense").value)||0;
+
+document.getElementById("businessMoneyResult").innerText=
+"নিট অবশিষ্ট: "+(sales-exp)+" টাকা";
+}
+
+function profitCalc(){
+let buy=Number(document.getElementById("buyPrice").value)||0;
+let sell=Number(document.getElementById("sellPrice").value)||0;
+
+let result=sell-buy;
+
+if(result>0)
+document.getElementById("profitResult").innerText=
+"লাভ: "+result+" টাকা";
+else if(result<0)
+document.getElementById("profitResult").innerText=
+"ক্ষতি: "+Math.abs(result)+" টাকা";
+else
+document.getElementById("profitResult").innerText="লাভ বা ক্ষতি নেই।";
+}
+
+function saveDue(){
+let name=document.getElementById("customer").value;
+let amount=Number(document.getElementById("dueAmount").value)||0;
+
+if(!name||!amount){
+document.getElementById("dueResult").innerText="নাম ও টাকা দিন।";
+return;
+}
+
+let old=JSON.parse(localStorage.getItem("inayaDue")||"[]");
+
+old.push({
+name:name,
+amount:amount,
+date:new Date().toLocaleDateString("bn-BD")
+});
+
+localStorage.setItem("inayaDue",JSON.stringify(old));
+
+document.getElementById("dueResult").innerText=
+"✅ "+name+"-এর "+amount+" টাকা বাকি সংরক্ষণ হয়েছে।";
+}
+
+function productCalc(){
+let name=document.getElementById("productName").value;
+let buy=Number(document.getElementById("productBuy").value)||0;
+let sell=Number(document.getElementById("productSell").value)||0;
+
+if(!name){
+document.getElementById("productResult").innerText="পণ্যের নাম দিন।";
+return;
+}
+
+document.getElementById("productResult").innerText=
+name+" → প্রতি পণ্যে লাভ: "+(sell-buy)+" টাকা";
+}
+
+function stockSave(){
+let name=document.getElementById("stockName").value;
+let qty=Number(document.getElementById("stockQty").value)||0;
+
+if(!name){
+document.getElementById("stockResult").innerText="পণ্যের নাম দিন।";
+return;
+}
+
+let stock=JSON.parse(localStorage.getItem("inayaStock")||"[]");
+
+stock.push({
+name:name,
+qty:qty
+});
+
+localStorage.setItem("inayaStock",JSON.stringify(stock));
+
+document.getElementById("stockResult").innerText=
+"✅ "+name+" — "+qty+" ইউনিট সংরক্ষণ হয়েছে।";
+}
+
+function makeBill(){
+let customer=document.getElementById("billCustomer").value;
+let product=document.getElementById("billProduct").value;
+let qty=Number(document.getElementById("billQty").value)||0;
+let price=Number(document.getElementById("billPrice").value)||0;
+
+if(!customer||!product||qty<=0||price<=0){
+document.getElementById("billResult").innerText=
+"সব তথ্য সঠিকভাবে দিন।";
+return;
+}
+
+let total=qty*price;
+
+document.getElementById("billResult").innerHTML=
+"<b>Inaya রসিদ</b><br><br>"+
+"কাস্টমার: "+customer+"<br>"+
+"পণ্য: "+product+"<br>"+
+"পরিমাণ: "+qty+"<br>"+
+"একক মূল্য: "+price+" টাকা<br>"+
+"<b>মোট: "+total+" টাকা</b>";
 }
 
 function saveNote(){
+let text=document.getElementById("noteText").value;
 
-  let note=document.getElementById("noteText").value;
+localStorage.setItem("inayaNote",text);
 
-  localStorage.setItem("inayaNote",note);
-
-  document.getElementById("noteResult").innerText=
-    "✅ আপনার নোট এই ডিভাইসে সংরক্ষণ হয়েছে।";
+document.getElementById("noteResult").innerText=
+"✅ নোট সংরক্ষণ হয়েছে।";
 }
 
 function loadNote(){
+let text=localStorage.getItem("inayaNote");
 
-  let saved=localStorage.getItem("inayaNote");
-
-  if(saved){
-    document.getElementById("noteText").value=saved;
-  }
+if(text)
+document.getElementById("noteText").value=text;
 }
 
-function searchService(){
+function searchServices(){
 
-  let search=document.getElementById("search").value
-    .toLowerCase()
-    .trim();
+let q=document.getElementById("search").value.toLowerCase().trim();
 
-  let cards=document.querySelectorAll(".card");
-  let found=0;
+let cards=document.querySelectorAll(".card");
+let found=0;
 
-  cards.forEach(card=>{
+cards.forEach(card=>{
 
-    let name=card.dataset.name.toLowerCase();
+let text=card.dataset.search.toLowerCase();
 
-    if(name.includes(search)){
-      card.style.display="";
-      found++;
-    }else{
-      card.style.display="none";
-    }
+if(text.includes(q)){
+card.style.display="";
+found++;
+}else{
+card.style.display="none";
+}
 
-  });
+});
 
-  document.getElementById("noResult").style.display=
-    found===0 ? "block" : "none";
-
+document.getElementById("noresult").style.display=
+found===0?"block":"none";
 }
 
 document.getElementById("search").addEventListener(
-  "input",
-  searchService
+"input",searchServices
 );
 
 loadNote();
@@ -591,4 +719,4 @@ loadNote();
 </script>
 
 </body>
-  </html>
+</html>
