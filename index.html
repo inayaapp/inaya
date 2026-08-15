@@ -2,10 +2,9 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#087f5b">
-<meta name="description" content="Inaya - মানুষের দৈনন্দিন ও ব্যবসার প্রয়োজনীয় ডিজিটাল সেবা">
-<title>Inaya - Digital Service Platform</title>
+<title>Inaya</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -14,10 +13,10 @@ font-family:Arial,"Noto Sans Bengali",sans-serif;
 background:#f4f7f6;color:#222;line-height:1.6
 }
 header{
-background:#087f5b;color:white;padding:22px 15px;text-align:center;
-position:sticky;top:0;z-index:10
+background:#087f5b;color:white;text-align:center;padding:22px 14px;
+position:sticky;top:0;z-index:20
 }
-.logo{font-size:35px;font-weight:bold}
+.logo{font-size:36px;font-weight:bold}
 .tag{font-size:14px}
 .search{
 max-width:650px;margin:15px auto 0;display:flex;gap:7px
@@ -26,19 +25,20 @@ max-width:650px;margin:15px auto 0;display:flex;gap:7px
 flex:1;padding:13px;border:0;border-radius:10px;font-size:16px
 }
 .search button{
-border:0;border-radius:10px;padding:0 18px;font-size:19px;cursor:pointer
+border:0;border-radius:10px;padding:0 17px;cursor:pointer;font-size:19px
 }
 .container{max-width:1100px;margin:auto;padding:18px 14px}
 .welcome{
-background:white;padding:20px;border-radius:16px;margin-bottom:18px;
+background:white;padding:20px;border-radius:16px;margin-bottom:20px;
 box-shadow:0 2px 8px #0001
 }
-.welcome h2{color:#087f5b;margin-bottom:6px}
+.welcome h2{color:#087f5b}
 .category{
-margin:22px 0 10px;color:#087f5b;font-size:22px
+color:#087f5b;font-size:21px;margin:22px 0 10px
 }
 .grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px
+display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+gap:13px
 }
 .card{
 background:white;border-radius:15px;padding:18px 10px;text-align:center;
@@ -46,16 +46,16 @@ box-shadow:0 2px 8px #0001;cursor:pointer;transition:.2s
 }
 .card:hover{transform:translateY(-3px)}
 .icon{font-size:32px}
-.card h3{font-size:15px;margin-top:6px}
+.card h3{font-size:15px;margin-top:5px}
 .section{
-display:none;background:white;margin-top:20px;padding:20px;border-radius:15px;
-box-shadow:0 2px 8px #0001
+display:none;background:white;padding:20px;margin-top:20px;
+border-radius:15px;box-shadow:0 2px 8px #0001
 }
 .section.active{display:block}
 .section h2{color:#087f5b;margin-bottom:12px}
 .back,.btn{
 background:#087f5b;color:white;border:0;border-radius:8px;
-padding:10px 16px;cursor:pointer;margin-top:8px
+padding:10px 15px;cursor:pointer;margin-top:8px
 }
 .back{margin-top:0;margin-bottom:15px}
 input,select,textarea{
@@ -65,22 +65,40 @@ border-radius:8px;font-size:15px
 .result{
 background:#eef9f4;padding:14px;border-radius:10px;margin-top:12px
 }
-.contact{
-display:flex;justify-content:space-between;align-items:center;
-gap:10px;padding:12px;background:#f5f5f5;border-radius:10px;margin:8px 0
-}
-.contact a{
-background:#087f5b;color:white;text-decoration:none;padding:7px 12px;
-border-radius:7px
-}
 .notice{
 background:#fff8df;padding:13px;border-radius:10px;margin:10px 0
 }
+.table-wrap{overflow-x:auto;margin-top:12px}
+table{
+width:100%;border-collapse:collapse;min-width:600px
+}
+th,td{
+border:1px solid #ddd;padding:9px;text-align:center
+}
+th{background:#087f5b;color:white}
+.delete{
+background:#d93025;color:white;border:0;border-radius:6px;
+padding:6px 9px;cursor:pointer
+}
+.small{font-size:13px;color:#666}
 .noresult{text-align:center;color:#777;padding:20px;display:none}
 footer{
 background:#063d2c;color:white;text-align:center;padding:25px 15px;margin-top:30px
 }
-.small{font-size:13px;color:#666}
+
+/* Receipt */
+.receipt{
+background:white;border:1px solid #ccc;padding:20px;margin-top:15px;
+max-width:700px
+}
+.receipt h2{text-align:center;color:#087f5b}
+.receipt-center{text-align:center}
+.receipt-line{
+display:flex;justify-content:space-between;border-bottom:1px dashed #aaa;
+padding:6px 0
+}
+.print-btn{background:#333}
+
 @media(max-width:480px){
 .logo{font-size:30px}
 .grid{grid-template-columns:repeat(2,1fr)}
@@ -110,78 +128,85 @@ background:#063d2c;color:white;text-align:center;padding:25px 15px;margin-top:30
 </p>
 </div>
 
+
+<!-- PEOPLE -->
+
 <h2 class="category">👤 মানুষের প্রয়োজনীয় সেবা</h2>
 
 <div class="grid">
 
-<div class="card" data-search="যোগাযোগ মোবাইল নম্বর জরুরি নম্বর" onclick="openSection('contact')">
-<div class="icon">📞</div><h3>যোগাযোগ ও নম্বর</h3>
+<div class="card" data-search="যোগাযোগ মোবাইল নম্বর" onclick="openSection('contact')">
+<div class="icon">📞</div>
+<h3>Inaya যোগাযোগ</h3>
 </div>
 
 <div class="card" data-search="জরুরি সেবা পুলিশ ফায়ার অ্যাম্বুলেন্স" onclick="openSection('emergency')">
-<div class="icon">🚨</div><h3>জরুরি সেবা</h3>
+<div class="icon">🚨</div>
+<h3>জরুরি সেবা</h3>
 </div>
 
 <div class="card" data-search="ক্যালকুলেটর হিসাব" onclick="openSection('calculator')">
-<div class="icon">🧮</div><h3>ক্যালকুলেটর</h3>
+<div class="icon">🧮</div>
+<h3>ক্যালকুলেটর</h3>
 </div>
 
-<div class="card" data-search="বয়স জন্ম তারিখ বয়স হিসাব" onclick="openSection('age')">
-<div class="icon">🎂</div><h3>বয়স হিসাব</h3>
+<div class="card" data-search="বয়স জন্ম তারিখ" onclick="openSection('age')">
+<div class="icon">🎂</div>
+<h3>বয়স হিসাব</h3>
 </div>
 
-<div class="card" data-search="আয় ব্যয় টাকা সঞ্চয়" onclick="openSection('personalMoney')">
-<div class="icon">💰</div><h3>আয়–ব্যয়</h3>
+<div class="card" data-search="আয় ব্যয় টাকা" onclick="openSection('personalMoney')">
+<div class="icon">💰</div>
+<h3>আয়–ব্যয়</h3>
 </div>
 
 <div class="card" data-search="শতাংশ পার্সেন্ট" onclick="openSection('percent')">
-<div class="icon">📊</div><h3>শতাংশ হিসাব</h3>
+<div class="icon">📊</div>
+<h3>শতাংশ হিসাব</h3>
 </div>
 
-<div class="card" data-search="জমি শতক একর বর্গফুট" onclick="openSection('land')">
-<div class="icon">🌾</div><h3>জমির হিসাব</h3>
+<div class="card" data-search="জমি শতক একর" onclick="openSection('land')">
+<div class="icon">🌾</div>
+<h3>জমির হিসাব</h3>
 </div>
 
-<div class="card" data-search="চাকরি নিয়োগ কর্মসংস্থান" onclick="openSection('job')">
-<div class="icon">💼</div><h3>চাকরি</h3>
+<div class="card" data-search="চাকরি নিয়োগ" onclick="openSection('job')">
+<div class="icon">💼</div>
+<h3>চাকরি</h3>
 </div>
 
 <div class="card" data-search="শিক্ষা পড়াশোনা" onclick="openSection('education')">
-<div class="icon">📚</div><h3>শিক্ষা</h3>
+<div class="icon">📚</div>
+<h3>শিক্ষা</h3>
 </div>
 
-<div class="card" data-search="নোট লেখা সংরক্ষণ" onclick="openSection('note')">
-<div class="icon">📝</div><h3>আমার নোট</h3>
+<div class="card" data-search="নোট লেখা" onclick="openSection('note')">
+<div class="icon">📝</div>
+<h3>নোট</h3>
 </div>
 
 </div>
 
-<h2 class="category">🏪 ব্যবসার প্রয়োজনীয় সেবা</h2>
+
+<!-- BUSINESS -->
+
+<h2 class="category">🏪 ব্যবসার সেবা</h2>
 
 <div class="grid">
 
-<div class="card" data-search="ব্যবসা আয় ব্যয়" onclick="openSection('businessMoney')">
-<div class="icon">💵</div><h3>ব্যবসার আয়–ব্যয়</h3>
+<div class="card" data-search="ব্যবসা পণ্য স্টক দাম" onclick="openSection('stock')">
+<div class="icon">📦</div>
+<h3>পণ্য ও স্টক</h3>
 </div>
 
-<div class="card" data-search="লাভ ক্ষতি ব্যবসা" onclick="openSection('profit')">
-<div class="icon">📈</div><h3>লাভ–ক্ষতি</h3>
+<div class="card" data-search="ব্যবসা দৈনিক আয় ব্যয় মাসিক" onclick="openSection('businessMoney')">
+<div class="icon">💵</div>
+<h3>দৈনিক আয়–ব্যয়</h3>
 </div>
 
-<div class="card" data-search="বাকি কাস্টমার দেনা পাওনা" onclick="openSection('due')">
-<div class="icon">👥</div><h3>বাকি হিসাব</h3>
-</div>
-
-<div class="card" data-search="পণ্য দাম বিক্রি ক্রয়" onclick="openSection('product')">
-<div class="icon">🏷️</div><h3>পণ্যের হিসাব</h3>
-</div>
-
-<div class="card" data-search="স্টক পণ্য মজুদ" onclick="openSection('stock')">
-<div class="icon">📦</div><h3>স্টক হিসাব</h3>
-</div>
-
-<div class="card" data-search="বিল রসিদ" onclick="openSection('bill')">
-<div class="icon">🧾</div><h3>বিল/রসিদ</h3>
+<div class="card" data-search="রসিদ বিল প্রিন্ট" onclick="openSection('receipt')">
+<div class="icon">🧾</div>
+<h3>রসিদ তৈরি ও Print</h3>
 </div>
 
 </div>
@@ -195,27 +220,19 @@ background:#063d2c;color:white;text-align:center;padding:25px 15px;margin-top:30
 
 <div class="section" id="contact">
 <button class="back" onclick="closeSections()">← ফিরে যান</button>
-<h2>📞 প্রয়োজনীয় যোগাযোগ</h2>
+<h2>📞 Inaya-এর সঙ্গে যোগাযোগ</h2>
 
 <div class="notice">
-এখানে ভবিষ্যতে যাচাই করা সরকারি প্রতিষ্ঠান, হাসপাতাল,
-ব্যবসা ও অন্যান্য প্রয়োজনীয় যোগাযোগের তথ্য যোগ করা যাবে।
+Inaya-এর সঙ্গে যোগাযোগ করার জন্য নিচের নম্বর ব্যবহার করতে পারবেন।
 </div>
 
-<div class="contact">
-<span>🚨 জাতীয় জরুরি সেবা</span>
-<a href="tel:999">কল করুন</a>
-</div>
+<div class="result">
+<b>📱 মোবাইল:</b><br>
+<a href="tel:01912028301">01912028301</a><br><br>
 
-<div class="contact">
-<span>📞 বাংলাদেশ পুলিশ</span>
-<a href="tel:999">কল করুন</a>
+<b>📱 বিকল্প মোবাইল:</b><br>
+<a href="tel:01590067686">01590067686</a>
 </div>
-
-<p class="small">
-নম্বর পরিবর্তন হতে পারে। গুরুত্বপূর্ণ নম্বর ব্যবহারের আগে
-সংশ্লিষ্ট প্রতিষ্ঠানের অফিসিয়াল তথ্য যাচাই করুন।
-</p>
 </div>
 
 
@@ -225,9 +242,8 @@ background:#063d2c;color:white;text-align:center;padding:25px 15px;margin-top:30
 <button class="back" onclick="closeSections()">← ফিরে যান</button>
 <h2>🚨 জরুরি সেবা</h2>
 
-<div class="contact">
-<span>জাতীয় জরুরি সেবা</span>
-<a href="tel:999">999</a>
+<div class="result">
+জাতীয় জরুরি সেবা: <a href="tel:999">999</a>
 </div>
 
 <div class="notice">
@@ -324,11 +340,9 @@ background:#063d2c;color:white;text-align:center;padding:25px 15px;margin-top:30
 <h2>💼 চাকরি</h2>
 
 <div class="notice">
-Inaya-তে ভবিষ্যতে সরকারি ও বেসরকারি চাকরির
-নিয়োগ বিজ্ঞপ্তি এবং প্রয়োজনীয় তথ্য যুক্ত করা যাবে।
+চাকরির গুরুত্বপূর্ণ তথ্য ও নিয়োগ বিজ্ঞপ্তি ভবিষ্যতে এখানে
+যুক্ত করা যাবে।
 </div>
-
-<p>বর্তমানে এখানে তথ্য বিভাগ প্রস্তুত রাখা হয়েছে।</p>
 </div>
 
 
@@ -339,8 +353,7 @@ Inaya-তে ভবিষ্যতে সরকারি ও বেসরকা�
 <h2>📚 শিক্ষা</h2>
 
 <div class="notice">
-শিক্ষার্থী ও চাকরিপ্রার্থীদের প্রয়োজনীয় শিক্ষা,
-পরীক্ষা ও প্রস্তুতির তথ্য ভবিষ্যতে এখানে যুক্ত করা হবে।
+শিক্ষা ও পরীক্ষার প্রয়োজনীয় তথ্য ভবিষ্যতে এখানে যুক্ত করা যাবে।
 </div>
 </div>
 
@@ -359,104 +372,126 @@ Inaya-তে ভবিষ্যতে সরকারি ও বেসরকা�
 </div>
 
 
-<!-- BUSINESS MONEY -->
-
-<div class="section" id="businessMoney">
-<button class="back" onclick="closeSections()">← ফিরে যান</button>
-<h2>💵 ব্যবসার আয়–ব্যয়</h2>
-
-<input id="sales" type="number" placeholder="মোট বিক্রি">
-<input id="businessExpense" type="number" placeholder="মোট খরচ">
-
-<button class="btn" onclick="businessMoneyCalc()">হিসাব করুন</button>
-
-<div class="result" id="businessMoneyResult"></div>
-</div>
-
-
-<!-- PROFIT -->
-
-<div class="section" id="profit">
-<button class="back" onclick="closeSections()">← ফিরে যান</button>
-<h2>📈 লাভ–ক্ষতি</h2>
-
-<input id="buyPrice" type="number" placeholder="ক্রয় মূল্য">
-<input id="sellPrice" type="number" placeholder="বিক্রয় মূল্য">
-
-<button class="btn" onclick="profitCalc()">হিসাব করুন</button>
-
-<div class="result" id="profitResult"></div>
-</div>
-
-
-<!-- DUE -->
-
-<div class="section" id="due">
-<button class="back" onclick="closeSections()">← ফিরে যান</button>
-<h2>👥 বাকি হিসাব</h2>
-
-<input id="customer" placeholder="কাস্টমারের নাম">
-<input id="dueAmount" type="number" placeholder="বাকি টাকা">
-
-<button class="btn" onclick="saveDue()">সংরক্ষণ করুন</button>
-
-<div class="result" id="dueResult"></div>
-</div>
-
-
-<!-- PRODUCT -->
-
-<div class="section" id="product">
-<button class="back" onclick="closeSections()">← ফিরে যান</button>
-<h2>🏷️ পণ্যের হিসাব</h2>
-
-<input id="productName" placeholder="পণ্যের নাম">
-<input id="productBuy" type="number" placeholder="ক্রয় মূল্য">
-<input id="productSell" type="number" placeholder="বিক্রয় মূল্য">
-
-<button class="btn" onclick="productCalc()">হিসাব করুন</button>
-
-<div class="result" id="productResult"></div>
-</div>
-
-
 <!-- STOCK -->
 
 <div class="section" id="stock">
 <button class="back" onclick="closeSections()">← ফিরে যান</button>
-<h2>📦 স্টক হিসাব</h2>
+<h2>📦 পণ্য ও স্টক</h2>
 
-<input id="stockName" placeholder="পণ্যের নাম">
-<input id="stockQty" type="number" placeholder="বর্তমান পরিমাণ">
+<div class="notice">
+একজন ব্যবসায়ী এখানে একাধিক পণ্য, ক্রয়মূল্য, বিক্রয়মূল্য ও
+স্টকের পরিমাণ রাখতে পারবেন।
+</div>
 
-<button class="btn" onclick="stockSave()">সংরক্ষণ করুন</button>
+<input id="sName" placeholder="পণ্যের নাম">
+<input id="sBuy" type="number" placeholder="ক্রয়মূল্য">
+<input id="sSell" type="number" placeholder="বিক্রয়মূল্য">
+<input id="sQty" type="number" placeholder="স্টকের পরিমাণ">
 
-<div class="result" id="stockResult"></div>
+<button class="btn" onclick="addProduct()">➕ পণ্য যোগ করুন</button>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>পণ্য</th>
+<th>ক্রয়</th>
+<th>বিক্রয়</th>
+<th>স্টক</th>
+<th>মোট মূল্য</th>
+<th>মুছুন</th>
+</tr>
+</thead>
+<tbody id="stockTable"></tbody>
+</table>
+</div>
+
+<div class="result" id="stockTotal"></div>
 </div>
 
 
-<!-- BILL -->
+<!-- BUSINESS MONEY -->
 
-<div class="section" id="bill">
+<div class="section" id="businessMoney">
 <button class="back" onclick="closeSections()">← ফিরে যান</button>
-<h2>🧾 বিল / রসিদ</h2>
+<h2>💵 দৈনিক আয়–ব্যয়</h2>
 
-<input id="billCustomer" placeholder="কাস্টমারের নাম">
-<input id="billProduct" placeholder="পণ্যের নাম">
-<input id="billQty" type="number" placeholder="পরিমাণ">
-<input id="billPrice" type="number" placeholder="একক মূল্য">
+<div class="notice">
+প্রতিদিনের আয় ও খরচ সংরক্ষণ করুন। পরে দিন বা মাস অনুযায়ী
+মোট হিসাব দেখতে পারবেন।
+</div>
 
-<button class="btn" onclick="makeBill()">রসিদ তৈরি করুন</button>
+<label>তারিখ</label>
+<input id="moneyDate" type="date">
 
-<div class="result" id="billResult"></div>
+<select id="moneyType">
+<option value="income">আয়</option>
+<option value="expense">খরচ</option>
+</select>
+
+<input id="moneyAmount" type="number" placeholder="টাকার পরিমাণ">
+
+<input id="moneyNote" placeholder="কী কারণে আয়/খরচ হয়েছে?">
+
+<button class="btn" onclick="addMoney()">➕ হিসাব যোগ করুন</button>
+
+<h3 style="margin-top:20px;color:#087f5b">📅 দৈনিক হিসাব</h3>
+
+<input id="daySelect" type="date">
+<button class="btn" onclick="showDaily()">দৈনিক হিসাব দেখুন</button>
+
+<div class="result" id="dailyResult"></div>
+
+<h3 style="margin-top:20px;color:#087f5b">📆 মাসিক হিসাব</h3>
+
+<input id="monthSelect" type="month">
+<button class="btn" onclick="showMonthly()">মাসিক হিসাব দেখুন</button>
+
+<div class="result" id="monthlyResult"></div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>তারিখ</th>
+<th>ধরন</th>
+<th>টাকা</th>
+<th>বিবরণ</th>
+<th>মুছুন</th>
+</tr>
+</thead>
+<tbody id="moneyTable"></tbody>
+</table>
+</div>
+</div>
+
+
+<!-- RECEIPT -->
+
+<div class="section" id="receipt">
+<button class="back" onclick="closeSections()">← ফিরে যান</button>
+<h2>🧾 রসিদ তৈরি ও Print</h2>
+
+<input id="shopName" placeholder="ব্যবসার নাম">
+<input id="shopPhone" placeholder="মোবাইল নম্বর">
+
+<input id="receiptNo" placeholder="রসিদ নম্বর">
+<input id="customerName" placeholder="কাস্টমারের নাম">
+
+<div id="receiptItems"></div>
+
+<button class="btn" onclick="addReceiptItem()">➕ আরও পণ্য যোগ করুন</button>
+
+<button class="btn" onclick="makeReceipt()">রসিদ তৈরি করুন</button>
+
+<div id="receiptOutput"></div>
 </div>
 
 </main>
 
 
 <footer>
-<b>Inaya</b>
-<br>
+<b>Inaya</b><br>
 মানুষ ও ব্যবসার প্রয়োজনীয় সেবা এক জায়গায়
 <br><br>
 © 2026 Inaya
@@ -465,47 +500,99 @@ Inaya-তে ভবিষ্যতে সরকারি ও বেসরকা�
 
 <script>
 
+/* GENERAL */
+
 function openSection(id){
-document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+document.querySelectorAll(".section")
+.forEach(x=>x.classList.remove("active"));
+
 document.getElementById(id).classList.add("active");
+
 window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function closeSections(){
-document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+document.querySelectorAll(".section")
+.forEach(x=>x.classList.remove("active"));
+
 window.scrollTo({top:0,behavior:"smooth"});
 }
 
+
+/* SEARCH */
+
+function searchServices(){
+
+let q=document.getElementById("search").value
+.toLowerCase().trim();
+
+let cards=document.querySelectorAll(".card");
+let found=0;
+
+cards.forEach(card=>{
+
+let text=card.dataset.search.toLowerCase();
+
+if(text.includes(q)){
+card.style.display="";
+found++;
+}else{
+card.style.display="none";
+}
+
+});
+
+document.getElementById("noresult").style.display=
+found===0?"block":"none";
+}
+
+document.getElementById("search")
+.addEventListener("input",searchServices);
+
+
+/* CALCULATOR */
+
 function calc(){
+
 let a=Number(document.getElementById("a").value);
 let b=Number(document.getElementById("b").value);
 let op=document.getElementById("op").value;
 
 if(isNaN(a)||isNaN(b)){
-document.getElementById("calcResult").innerText="দুটি সংখ্যা লিখুন।";
+document.getElementById("calcResult").innerText=
+"দুটি সংখ্যা লিখুন।";
 return;
 }
 
 let r;
+
 if(op==="+")r=a+b;
 if(op==="-")r=a-b;
 if(op==="*")r=a*b;
+
 if(op==="/"){
 if(b===0){
-document.getElementById("calcResult").innerText="০ দিয়ে ভাগ করা যাবে না।";
+document.getElementById("calcResult").innerText=
+"০ দিয়ে ভাগ করা যাবে না।";
 return;
 }
 r=a/b;
 }
 
-document.getElementById("calcResult").innerText="ফলাফল: "+r;
+document.getElementById("calcResult").innerText=
+"ফলাফল: "+r;
 }
 
+
+/* AGE */
+
 function ageCalc(){
+
 let value=document.getElementById("birth").value;
 
 if(!value){
-document.getElementById("ageResult").innerText="জন্ম তারিখ নির্বাচন করুন।";
+document.getElementById("ageResult").innerText=
+"জন্ম তারিখ নির্বাচন করুন।";
 return;
 }
 
@@ -530,7 +617,11 @@ document.getElementById("ageResult").innerText=
 "বয়স: "+y+" বছর "+m+" মাস "+d+" দিন";
 }
 
+
+/* PERSONAL MONEY */
+
 function personalCalc(){
+
 let income=Number(document.getElementById("income").value)||0;
 let expense=Number(document.getElementById("expense").value)||0;
 
@@ -538,12 +629,17 @@ document.getElementById("personalResult").innerText=
 "অবশিষ্ট: "+(income-expense)+" টাকা";
 }
 
+
+/* PERCENT */
+
 function percentCalc(){
+
 let n=Number(document.getElementById("pnum").value);
 let p=Number(document.getElementById("pvalue").value);
 
 if(isNaN(n)||isNaN(p)){
-document.getElementById("percentResult").innerText="তথ্য দিন।";
+document.getElementById("percentResult").innerText=
+"তথ্য দিন।";
 return;
 }
 
@@ -551,11 +647,16 @@ document.getElementById("percentResult").innerText=
 p+"% = "+((n*p)/100);
 }
 
+
+/* LAND */
+
 function landCalc(){
+
 let s=Number(document.getElementById("shotok").value);
 
 if(isNaN(s)){
-document.getElementById("landResult").innerText="শতকের পরিমাণ দিন।";
+document.getElementById("landResult").innerText=
+"শতকের পরিমাণ দিন।";
 return;
 }
 
@@ -564,113 +665,11 @@ s+" শতক = "+(s*435.6).toFixed(2)+" বর্গফুট<br>"+
 s+" শতক = "+(s/100).toFixed(4)+" একর";
 }
 
-function businessMoneyCalc(){
-let sales=Number(document.getElementById("sales").value)||0;
-let exp=Number(document.getElementById("businessExpense").value)||0;
 
-document.getElementById("businessMoneyResult").innerText=
-"নিট অবশিষ্ট: "+(sales-exp)+" টাকা";
-}
-
-function profitCalc(){
-let buy=Number(document.getElementById("buyPrice").value)||0;
-let sell=Number(document.getElementById("sellPrice").value)||0;
-
-let result=sell-buy;
-
-if(result>0)
-document.getElementById("profitResult").innerText=
-"লাভ: "+result+" টাকা";
-else if(result<0)
-document.getElementById("profitResult").innerText=
-"ক্ষতি: "+Math.abs(result)+" টাকা";
-else
-document.getElementById("profitResult").innerText="লাভ বা ক্ষতি নেই।";
-}
-
-function saveDue(){
-let name=document.getElementById("customer").value;
-let amount=Number(document.getElementById("dueAmount").value)||0;
-
-if(!name||!amount){
-document.getElementById("dueResult").innerText="নাম ও টাকা দিন।";
-return;
-}
-
-let old=JSON.parse(localStorage.getItem("inayaDue")||"[]");
-
-old.push({
-name:name,
-amount:amount,
-date:new Date().toLocaleDateString("bn-BD")
-});
-
-localStorage.setItem("inayaDue",JSON.stringify(old));
-
-document.getElementById("dueResult").innerText=
-"✅ "+name+"-এর "+amount+" টাকা বাকি সংরক্ষণ হয়েছে।";
-}
-
-function productCalc(){
-let name=document.getElementById("productName").value;
-let buy=Number(document.getElementById("productBuy").value)||0;
-let sell=Number(document.getElementById("productSell").value)||0;
-
-if(!name){
-document.getElementById("productResult").innerText="পণ্যের নাম দিন।";
-return;
-}
-
-document.getElementById("productResult").innerText=
-name+" → প্রতি পণ্যে লাভ: "+(sell-buy)+" টাকা";
-}
-
-function stockSave(){
-let name=document.getElementById("stockName").value;
-let qty=Number(document.getElementById("stockQty").value)||0;
-
-if(!name){
-document.getElementById("stockResult").innerText="পণ্যের নাম দিন।";
-return;
-}
-
-let stock=JSON.parse(localStorage.getItem("inayaStock")||"[]");
-
-stock.push({
-name:name,
-qty:qty
-});
-
-localStorage.setItem("inayaStock",JSON.stringify(stock));
-
-document.getElementById("stockResult").innerText=
-"✅ "+name+" — "+qty+" ইউনিট সংরক্ষণ হয়েছে।";
-}
-
-function makeBill(){
-let customer=document.getElementById("billCustomer").value;
-let product=document.getElementById("billProduct").value;
-let qty=Number(document.getElementById("billQty").value)||0;
-let price=Number(document.getElementById("billPrice").value)||0;
-
-if(!customer||!product||qty<=0||price<=0){
-document.getElementById("billResult").innerText=
-"সব তথ্য সঠিকভাবে দিন।";
-return;
-}
-
-let total=qty*price;
-
-document.getElementById("billResult").innerHTML=
-"<b>Inaya রসিদ</b><br><br>"+
-"কাস্টমার: "+customer+"<br>"+
-"পণ্য: "+product+"<br>"+
-"পরিমাণ: "+qty+"<br>"+
-"একক মূল্য: "+price+" টাকা<br>"+
-"<b>মোট: "+total+" টাকা</b>";
-}
+/* NOTE */
 
 function saveNote(){
+
 let text=document.getElementById("noteText").value;
 
 localStorage.setItem("inayaNote",text);
@@ -680,43 +679,394 @@ document.getElementById("noteResult").innerText=
 }
 
 function loadNote(){
+
 let text=localStorage.getItem("inayaNote");
 
 if(text)
 document.getElementById("noteText").value=text;
 }
 
-function searchServices(){
 
-let q=document.getElementById("search").value.toLowerCase().trim();
+/* STOCK */
 
-let cards=document.querySelectorAll(".card");
-let found=0;
+let products=
+JSON.parse(localStorage.getItem("inayaProducts")||"[]");
 
-cards.forEach(card=>{
+function addProduct(){
 
-let text=card.dataset.search.toLowerCase();
+let name=document.getElementById("sName").value.trim();
+let buy=Number(document.getElementById("sBuy").value);
+let sell=Number(document.getElementById("sSell").value);
+let qty=Number(document.getElementById("sQty").value);
 
-if(text.includes(q)){
-card.style.display="";
-found++;
-}else{
-card.style.display="none";
+if(!name||buy<0||sell<0||qty<0){
+alert("পণ্যের সব তথ্য সঠিকভাবে দিন।");
+return;
 }
 
+products.push({
+name:name,
+buy:buy,
+sell:sell,
+qty:qty
 });
 
-document.getElementById("noresult").style.display=
-found===0?"block":"none";
-}
-
-document.getElementById("search").addEventListener(
-"input",searchServices
+localStorage.setItem(
+"inayaProducts",
+JSON.stringify(products)
 );
 
+document.getElementById("sName").value="";
+document.getElementById("sBuy").value="";
+document.getElementById("sSell").value="";
+document.getElementById("sQty").value="";
+
+showProducts();
+}
+
+function deleteProduct(index){
+
+products.splice(index,1);
+
+localStorage.setItem(
+"inayaProducts",
+JSON.stringify(products)
+);
+
+showProducts();
+}
+
+function showProducts(){
+
+let table=document.getElementById("stockTable");
+
+table.innerHTML="";
+
+let total=0;
+
+products.forEach((p,i)=>{
+
+let value=p.buy*p.qty;
+total+=value;
+
+table.innerHTML+=`
+<tr>
+<td>${escapeHTML(p.name)}</td>
+<td>${p.buy}</td>
+<td>${p.sell}</td>
+<td>${p.qty}</td>
+<td>${value.toFixed(2)}</td>
+<td>
+<button class="delete"
+onclick="deleteProduct(${i})">মুছুন</button>
+</td>
+</tr>
+`;
+});
+
+document.getElementById("stockTotal").innerText=
+"মোট স্টক ক্রয়মূল্য: "+total.toFixed(2)+" টাকা";
+}
+
+
+/* BUSINESS MONEY */
+
+let moneyRecords=
+JSON.parse(localStorage.getItem("inayaMoney")||"[]");
+
+function addMoney(){
+
+let date=document.getElementById("moneyDate").value;
+let type=document.getElementById("moneyType").value;
+let amount=Number(document.getElementById("moneyAmount").value);
+let note=document.getElementById("moneyNote").value.trim();
+
+if(!date||amount<=0){
+alert("তারিখ ও টাকার পরিমাণ দিন।");
+return;
+}
+
+moneyRecords.push({
+date:date,
+type:type,
+amount:amount,
+note:note
+});
+
+localStorage.setItem(
+"inayaMoney",
+JSON.stringify(moneyRecords)
+);
+
+document.getElementById("moneyAmount").value="";
+document.getElementById("moneyNote").value="";
+
+showMoneyRecords();
+}
+
+function deleteMoney(index){
+
+moneyRecords.splice(index,1);
+
+localStorage.setItem(
+"inayaMoney",
+JSON.stringify(moneyRecords)
+);
+
+showMoneyRecords();
+}
+
+function showMoneyRecords(){
+
+let table=document.getElementById("moneyTable");
+
+table.innerHTML="";
+
+moneyRecords.forEach((m,i)=>{
+
+let type=m.type==="income"?"আয়":"খরচ";
+
+table.innerHTML+=`
+<tr>
+<td>${m.date}</td>
+<td>${type}</td>
+<td>${m.amount}</td>
+<td>${escapeHTML(m.note)}</td>
+<td>
+<button class="delete"
+onclick="deleteMoney(${i})">মুছুন</button>
+</td>
+</tr>
+`;
+});
+}
+
+
+/* DAILY */
+
+function showDaily(){
+
+let date=document.getElementById("daySelect").value;
+
+if(!date){
+alert("তারিখ নির্বাচন করুন।");
+return;
+}
+
+let records=moneyRecords.filter(x=>x.date===date);
+
+let income=0;
+let expense=0;
+
+records.forEach(x=>{
+if(x.type==="income")income+=x.amount;
+else expense+=x.amount;
+});
+
+document.getElementById("dailyResult").innerHTML=
+"<b>তারিখ:</b> "+date+
+"<br>মোট আয়: "+income.toFixed(2)+" টাকা"+
+"<br>মোট খরচ: "+expense.toFixed(2)+" টাকা"+
+"<br><b>অবশিষ্ট: "+(income-expense).toFixed(2)+" টাকা</b>";
+}
+
+
+/* MONTHLY */
+
+function showMonthly(){
+
+let month=document.getElementById("monthSelect").value;
+
+if(!month){
+alert("মাস নির্বাচন করুন।");
+return;
+}
+
+let records=moneyRecords.filter(
+x=>x.date.startsWith(month)
+);
+
+let income=0;
+let expense=0;
+
+records.forEach(x=>{
+if(x.type==="income")income+=x.amount;
+else expense+=x.amount;
+});
+
+document.getElementById("monthlyResult").innerHTML=
+"<b>মাস:</b> "+month+
+"<br>মোট আয়: "+income.toFixed(2)+" টাকা"+
+"<br>মোট খরচ: "+expense.toFixed(2)+" টাকা"+
+"<br><b>মাসিক অবশিষ্ট: "+
+(income-expense).toFixed(2)+" টাকা</b>";
+}
+
+
+/* RECEIPT */
+
+let receiptItems=[];
+
+function addReceiptItem(){
+
+let div=document.createElement("div");
+
+div.innerHTML=`
+<hr style="margin:12px 0">
+<input class="rName" placeholder="পণ্যের নাম">
+<input class="rQty" type="number" placeholder="পরিমাণ">
+<input class="rPrice" type="number" placeholder="একক মূল্য">
+`;
+
+document.getElementById("receiptItems").appendChild(div);
+}
+
+function makeReceipt(){
+
+let shop=document.getElementById("shopName").value;
+let phone=document.getElementById("shopPhone").value;
+let no=document.getElementById("receiptNo").value;
+let customer=document.getElementById("customerName").value;
+
+let names=document.querySelectorAll(".rName");
+let qtys=document.querySelectorAll(".rQty");
+let prices=document.querySelectorAll(".rPrice");
+
+if(!shop||names.length===0){
+alert("ব্যবসার নাম ও অন্তত একটি পণ্য দিন।");
+return;
+}
+
+let rows="";
+let total=0;
+
+for(let i=0;i<names.length;i++){
+
+let name=names[i].value;
+let qty=Number(qtys[i].value)||0;
+let price=Number(prices[i].value)||0;
+
+if(!name||qty<=0||price<0)continue;
+
+let line=qty*price;
+total+=line;
+
+rows+=`
+<tr>
+<td>${escapeHTML(name)}</td>
+<td>${qty}</td>
+<td>${price.toFixed(2)}</td>
+<td>${line.toFixed(2)}</td>
+</tr>
+`;
+}
+
+let date=new Date().toLocaleDateString("bn-BD");
+
+document.getElementById("receiptOutput").innerHTML=`
+
+<div class="receipt" id="printReceipt">
+
+<h2>${escapeHTML(shop)}</h2>
+
+<div class="receipt-center">
+${phone?escapeHTML(phone):""}<br>
+রসিদ নং: ${escapeHTML(no||"N/A")}<br>
+তারিখ: ${date}<br>
+কাস্টমার: ${escapeHTML(customer||"সাধারণ কাস্টমার")}
+</div>
+
+<br>
+
+<table style="width:100%;min-width:0">
+<thead>
+<tr>
+<th>পণ্য</th>
+<th>পরিমাণ</th>
+<th>দাম</th>
+<th>মোট</th>
+</tr>
+</thead>
+
+<tbody>
+${rows}
+</tbody>
+
+<tfoot>
+<tr>
+<th colspan="3">সর্বমোট</th>
+<th>${total.toFixed(2)}</th>
+</tr>
+</tfoot>
+</table>
+
+<br>
+
+<div class="receipt-center">
+ধন্যবাদ। আবার আসবেন।
+</div>
+
+</div>
+
+<button class="btn print-btn"
+onclick="printReceipt()">🖨️ রসিদ Print করুন</button>
+`;
+}
+
+function printReceipt(){
+
+let content=document.getElementById("printReceipt").innerHTML;
+
+let win=window.open("","_blank");
+
+win.document.write(`
+<html>
+<head>
+<title>Inaya Receipt</title>
+<style>
+body{font-family:Arial,sans-serif;padding:20px}
+h2{text-align:center;color:#087f5b}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #999;padding:8px;text-align:center}
+th{background:#eee}
+.receipt-center{text-align:center}
+</style>
+</head>
+<body>
+${content}
+<script>
+window.onload=function(){
+window.print();
+}
+<\/script>
+</body>
+</html>
+`);
+
+win.document.close();
+}
+
+
+/* SAFE TEXT */
+
+function escapeHTML(text){
+
+return String(text)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+}
+
+
+/* START */
+
 loadNote();
+showProducts();
+showMoneyRecords();
 
 </script>
 
 </body>
-</html>
+  </html>
