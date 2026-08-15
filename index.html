@@ -36,6 +36,61 @@ footer{background:#063d2c;color:#fff;text-align:center;padding:25px 15px;margin-
 .status{font-size:13px;margin-top:8px}.ok{color:#087f5b}.err{color:#b42318}
 @media(max-width:480px){.logo{font-size:30px}.grid{grid-template-columns:repeat(2,1fr)}}
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const INAYA_SUPABASE_URL = "https://zhiowaggxqzcrtgpwevg.supabase.co";
+const INAYA_SUPABASE_KEY = "sb_publishable_ODUZ1NTs46dJOiV8yYQV5Q_RdaDPW-f";
+const { createClient } = supabase;
+const inayaSupabase = createClient(INAYA_SUPABASE_URL, INAYA_SUPABASE_KEY);
+
+async function inayaSession(){
+  const { data } = await inayaSupabase.auth.getSession();
+  return data.session;
+}
+
+async function inayaSignOut(){
+  await inayaSupabase.auth.signOut();
+  location.reload();
+}
+
+async function inayaSignUp(){
+  const email = document.getElementById("inayaEmail").value.trim();
+  const password = document.getElementById("inayaPassword").value;
+  if(!email || password.length < 6){
+    document.getElementById("inayaAuthMsg").innerText =
+      "সঠিক ইমেইল দিন এবং পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের দিন।";
+    return;
+  }
+  const { error } = await inayaSupabase.auth.signUp({email,password});
+  document.getElementById("inayaAuthMsg").innerText =
+    error ? "❌ " + error.message : "✅ অ্যাকাউন্ট তৈরি হয়েছে। ইমেইল যাচাই করতে হতে পারে।";
+}
+
+async function inayaLogin(){
+  const email = document.getElementById("inayaEmail").value.trim();
+  const password = document.getElementById("inayaPassword").value;
+  const { error } = await inayaSupabase.auth.signInWithPassword({email,password});
+  document.getElementById("inayaAuthMsg").innerText =
+    error ? "❌ " + error.message : "✅ লগইন সফল।";
+  if(!error) setTimeout(()=>location.reload(),300);
+}
+
+async function inayaAuthUI(){
+  const session = await inayaSession();
+  const box = document.getElementById("inayaAuthBox");
+  if(!box) return;
+  if(session){
+    box.innerHTML = `
+      <div class="result">
+        👤 <b>লগইন করা আছে</b><br>
+        ${escapeHTML(session.user.email || "")}<br>
+        <button class="btn" onclick="inayaSignOut()">লগআউট</button>
+      </div>`;
+  }
+}
+document.addEventListener("DOMContentLoaded", inayaAuthUI);
+</script>
 </head>
 <body>
 <header>
@@ -53,6 +108,18 @@ footer{background:#063d2c;color:#fff;text-align:center;padding:25px 15px;margin-
 <h2>Inaya-তে স্বাগতম 👋</h2>
 <p>মানুষের দৈনন্দিন প্রয়োজন এবং ছোট ব্যবসার প্রয়োজনীয় ডিজিটাল সুবিধা সহজভাবে এক জায়গায় দেওয়াই Inaya-এর উদ্দেশ্য।</p>
 </div>
+
+
+<div id="inayaAuthBox" class="welcome">
+  <h2>👤 Inaya অ্যাকাউন্ট</h2>
+  <p class="small">নিজের তথ্য আলাদা রাখতে অ্যাকাউন্ট তৈরি করে ব্যবহার করুন।</p>
+  <input id="inayaEmail" type="email" placeholder="আপনার ইমেইল">
+  <input id="inayaPassword" type="password" placeholder="পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)">
+  <button class="btn" onclick="inayaLogin()">লগইন</button>
+  <button class="btn" onclick="inayaSignUp()">নতুন অ্যাকাউন্ট খুলুন</button>
+  <div class="result" id="inayaAuthMsg">লগইন না করেও সাধারণ সেবাগুলো ব্যবহার করা যাবে।</div>
+</div>
+
 
 <h2 class="category">👤 মানুষের প্রয়োজনীয় সেবা</h2>
 <div class="grid">
